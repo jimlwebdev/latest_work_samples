@@ -1,0 +1,38 @@
+.isi_cover{/*padding:0 0 25px 0;*/}
+.isi_expand{top:0px;}
+.main_company_logos{padding-top:60px;}
+
+body#rep_connect header div.main_rep_message{margin:10px -10px 0 0 ;}
+body#rep_connect header div.header_rep_msg_ctr{padding-top:5px;}
+body#rep_connect header div span#main_rep_msg_ctr{display:none;color:#fff;background-color:#ffa500;font-size:10px;padding:1px 2px;border-radius:2px}
+body#rep_connect header div.main_hcp_name{color:#fff;padding:20px 0;min-width:150px;position:relative;text-align:right;}
+body#rep_connect header div.main_hcp_name div.tempDD{background:#bfddf1;box-shadow:1px 1px 4px 1px #999;position:absolute;top:75%;right:0px;text-align:left;width:150px;display:none;}
+body#rep_connect header div.main_hcp_name div.tempDD div{border-bottom:1px solid #fff;color:#17476e;cursor:pointer;font-weight:bold;padding:10px 20px;}
+
+
+body#rep_connect main div#pdone_msg{height:40px;background:#ffffcc;display:none;text-align:center;margin:10px 0;}
+body#rep_connect main div#pdone_msg div{padding-top:10px;font-size:14px;}
+body#rep_connect main div#pdone_msg span, body#rep_connect main div#pdone_msg img{vertical-align:middle;}
+
+body#rep_connect main button{width:120px;height:30px;background-color:#0c6fbf;border-radius:10px;color:#fff;}
+body#rep_connect main button a{color:#fff;text-decoration:none;}
+
+body#rep_connect main div.padL20{padding-left:20px;}
+body#rep_connect main div.padR20{padding-right:20px;}
+
+body#rep_connect main p{/*line-height:20px;*/color:#464646;}
+body#rep_connect main p.h1tag{padding:20px 0 25px 0;font-size:14px;}
+
+body#rep_connect main div.new_to_tmb_no{padding:25px 0 50px 0;}
+body#rep_connect main div.new_to_tmb_yes{background:#ffff00;padding:25px 0 50px 0;}
+body#rep_connect main div.new_to_tmb_yes div.repimg, div#rep_connect main div.new_to_tmb_no div.repimg{/*width:81px;height:81px;*/}
+body#rep_connect main div.new_to_tmb_yes div.repimg{position:relative;}
+body#rep_connect main div.new_to_tmb_no div.repimg img{}
+body#rep_connect main div.new_to_tmb_no div.repimg img.new{display:none;}
+body#rep_connect main div.new_to_tmb_yes div.repimg img.new{position:absolute;left:0px;top:0px;height:auto;}
+body#rep_connect main div.linkbutton{padding-top:25px;font-size:14px;}
+body#rep_connect main div.linkbutton span{padding:0 10px;}
+
+
+body#rep_connect div.isi ul li.level0{list-style-type:disc;margin-left:20px;}
+body#rep_connect div.isi ul li.level1{list-style-type:square;margin-left:40px;}

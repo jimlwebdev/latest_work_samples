@@ -1,0 +1,44 @@
+p.copydown{padding:0 0 12px 0;}
+p.copyup,p.copyhalf{padding:0 0 12px 12px;}
+span.hospital, span.school{font-size:14px;font-weight:bold;}
+span.addspace{padding:0 0 0 6px;font-size:12px;vertical-align:middle;}
+div.profile_header span{font-size:16px;}
+div.profile_header span.position{font-size:21px;}
+div.profile_header span.drname{font-size:21px;font-weight:bold;}
+
+div#profile_content{text-align:left;margin:0;width:650px;}
+
+div#profile_header{text-align:left;padding:12px 0;}
+div#profile_header div.desc{text-align:left;padding:0 0 0 12px;float:left;}
+div#profile_header img{width:135px;}
+
+div.resume{text-align:left;border-top:1px solid #085DAB;padding:12px;}
+
+div.outer p{padding:10px 0;font-size:12px;}
+p.headline{font-weight:bold;text-decoration:underline;padding:0 0 24px 0;font-size:16px;}
+p.copydown{padding:0 0 12px 0;}
+p.copyup,p.copyhalf{padding:0 0 0 12px;}
+
+div#edit_profile_content{text-align:left;padding:6px 0 35px 0;}
+div#edit_profile_content div{text-align:left;padding:6px 0 30px 0;}
+div#edit_profile_content div.outer{padding:6px 0;}
+div#edit_profile_content div.alignR{text-align:right;}
+
+img.remove, img.rmvpos, img.addme, img.addpos, img.addSpc{width:27px;vertical-align:middle;}
+img.remove, img.rmvpos{padding:0 0 0 6px;}
+
+div#profile_content input[type=text], div#profile_content select{border:5px solid #ececed;font-family:Arial;
+box-shadow:inset 1px 1px 1px #A9A9A9, 0 0 2px #DCE9F1;background:transparent;padding:0 3px;margin:0 3px;
+vertical-align:middle;}
+
+div#profile_content input.large{width:416px;}
+div#profile_content input.medium{width:246px;}
+div#profile_content input.date, div#profile_content input.small{width:96px;}
+div#profile_content select.state{width:69px;}
+div#profile_content select.specialty{width:416px;}
+
+div#profile_content input[type=button]{border:0 none transparent;background:#0c6fbf;color:#fff;border-radius:5px;padding:5px 10px;}
+div#profile_content input[type=button]:hover{background:#85b7df;}
+
+div#profile_content input{font-size:12px;height:25px;}
+div#profile_content select{height:35px;}

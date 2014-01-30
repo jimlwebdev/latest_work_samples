@@ -1,0 +1,133 @@
+@charset "utf-8";
+/* CSS Document */
+
+         div#rssfeed.home div.content{padding:10px 0 25px 0;}
+         div#rssfeed div.headline{width:600px;text-align:left;font:16px Arial;padding-top:5px;color:#505050;}
+         div#rssfeed div.meet{width:315px;text-align:left;padding-left:15px;border-left:1px solid #BCCCF1;}
+
+         div.stacklinks{padding:50px 0 0 0;}
+         div.stacklinks a,div.stacklinks span{vertical-align:bottom;line-height:16px;font:12px Arial;color:#005DAB;display:inline;}
+         div.stacklinks span{padding:0 10px;color:#727272;}
+
+         div#rssfeed div.cornerstamp{float:right;width:220px;height:370px;padding:10px;background:#fff;/*margin-right:10px;*/}
+         div#rssfeed div.newsfeeds{width:960px;padding:0;}
+         div#rssfeed div.leftside{width:960px;padding-right:0;border:none;float:none;}
+
+         div#rssfeed div.tower div.callout{width:225px;text-align:left;padding:0;}
+         div#rssfeed div.about{width:190px;}
+         div#rssfeed div.about a.meet{line-height:22px;}
+         div#rssfeed div.about a.click{line-height:14px;font:normal 16px Arial;color:#505050;}
+         div#rssfeed div.imgabout{/*width:80px;*/}
+         div#rssfeed div.imgabout img{height:100px;/*width:80px;*/}
+
+         div#rssdetail div.leftside{float:left;width:680px;text-align:left;border-right:1px solid #BCCCF1;padding-right:10px;}
+         div#rssdetail div.tower div.callout{padding:0;}
+
+         div#rssfeed.home div.content, div#rssdetail.home div.content{padding:15px 10px;text-align:left;background:transparent url(/images/site/banner_line_bg.jpg) center 0px repeat-x;}
+         div#rssfeed div.banner{height:30px;line-height:30px;vertical-align:middle;text-align:left;background:url('/images/site/buzz_banner_bg.jpg') 0 0 repeat-x;margin:0 0 10px 0;padding-left:25px;}
+
+div#about div.details{width:680px;}
+div#about .details h2.blogblue{color:#005DAB;}
+div#about .details h3{padding-top:15px;}
+
+         .newsfeeds{padding:0;}
+         .tower{float:right;width:240px;overflow:hidden;text-align:left;padding:0;}
+         .xnewsfeeds{width:800px;}
+         .news-feeds-top{background: url('/images/site/box.png') 0 0 no-repeat;}
+         .news-feeds-bottomcap{background: url('/images/site/box_cap.png') 0 0 no-repeat;height:50px}
+         .news-feeds-bottomcap div{height:25px;text-align:right;}
+         .news-feeds-tower{float:left;background: url('/images/site/rss_vertical_names.png') 0px 0px no-repeat;width:50px;}
+         .news-feeds-tower a{width:48px;height:248px;display:block;}
+         .news-feeds-rss{float:left;width:146px;padding:10px 5px;}
+         .news-feeds-outside{width:220px;border-radius:10px;/*margin:10px;*/}
+         .ALL{color:#000;font-weight:bold;padding:0 10px;}
+         .top-and-bottom{float:left;width:220px;/*padding:10px 5px;*/margin:10px;background:#fff;}
+         .JAMA div.news-feeds-outside{background-color:#320e56;}
+         .JAMA div.news-feeds-tower{background-position:-100px 0;height:131px;}
+         .ClinicalTrials div.news-feeds-outside{background-color:#704d0d;} 
+         .ClinicalTrials div.news-feeds-tower{background-position:0 0;height:142px;}
+         .MedicalConferences div.news-feeds-outside{background-color:#0d6068;} 
+         .MedicalConferences div.news-feeds-tower{background-position:-50px 0;height:226px;}
+         .FDANews div.news-feeds-outside{background-color:#878105;} 
+         .FDANews div.news-feeds-tower{background-position:-150px 0;height:125px;}
+         .LatestMedicalNews div.news-feeds-outside{background-color:#0b0f72;} 
+         .LatestMedicalNews div.news-feeds-tower{background-position:-200px 0;height:227px;}
+         .ProductAlerts div.news-feeds-outside{background-color:#4a0301;} 
+         .ProductAlerts div.news-feeds-tower{background-position:-250px 0;height:157px;}
+         .HealthNews div.news-feeds-outside{background-color:#81270d;} 
+         .HealthNews div.news-feeds-tower{background-position:-300px 0;height:202px;}
+         .PracticeManagement div.news-feeds-outside{background-color:#783956;} 
+         .PracticeManagement div.news-feeds-tower{background-position:-350px 0;height:236px;}
+         .Calendar div.news-feeds-outside{background-color:#7E280D}
+         .Calendar div.news-feeds-tower{background-position:-400px 0;height:236px;}
+
+         .rss-title{text-align:left;/*line-height:20px;*/background-color:#fff;}
+         .rss-description{font-size:14px;text-align:left;color:#505050;/*line-height:16px;*/}
+         .rss-description img{display:none;}
+         .read-more{text-align:right;padding:0 10px;/*line-height:14px;*/}
+         .read-more a{background-color:#fff;}
+         .rss-link{/*height:25px;*/text-align:right;padding:5px 10px;}
+         .rss-link a{width:115px;height:15px;background:url('/images/site/ViewAll.png');float:right;display:block;}
+         .rss-link a:hover{/*background:url('/images/site/ViewAll.png');*/}
+.backtotop{text-align:right;padding:10px 0;}
+#backtotop img{vertical-align:middle;}
+
+div.honetag{background: url('/images/site/subpage_titles.png') -25px 0 no-repeat;height:50px}
+
+div.honetag.ClinicalTrials{background-position:-25px 0px;margin:10px 0;}
+div.honetag.MedicalConferences{background-position:-25px -50px;}
+div.honetag.JAMA{background-position:-25px -100px;}
+div.honetag.FDANews{background-position:-25px -150px;}
+div.honetag.LatestMedicalNews{background-position:-25px -200px;}
+div.honetag.ProductAlerts{background-position:-25px -250px;}
+div.honetag.HealthNews{background-position:-25px -300px;}
+div.honetag.PracticeManagement{background-position:-25px -350px;}
+div.honetag.Calendar{background-position:-25px -400px;}
+
+div.calendar_events{text-align:left;width:681px;}
+div.calendar_events p{font-size:12px;}
+div.calendar_events span{color:#005DAB;}
+
+         .isotope-item {z-index: 2;}
+         .isotope-hidden.isotope-item {
+         pointer-events: none;
+         z-index: 1;
+         }
+         .isotope,
+         .isotope .isotope-item {
+         -webkit-transition-duration: 0.8s;
+         -moz-transition-duration: 0.8s;
+         transition-duration: 0.8s;
+         }
+         .isotope {
+         -webkit-transition-property: height, width;
+         -moz-transition-property: height, width;
+         transition-property: height, width;
+         }
+         .isotope .isotope-item {
+         -webkit-transition-property: -webkit-transform, opacity;
+         -moz-transition-property: -moz-transform, opacity;
+         transition-property: transform, opacity;
+         }
+
+.article_content h3 { font-size:16px; font-weight:700; }
+.article_content .storyDate {
+    height: 40px;
+    width: 105px;
+}
+.article_content .day {
+    color: #CCCCCC;
+    font-size: 42px;
+    padding-right: 5px;
+}
+.article_content .myr {
+    border-left: 1px solid #CCCCCC;
+    padding: 5px 0 0 5px;
+}
+.article_content .month {
+    color: #CCCCCC;
+}
+.article_content .year {
+    color: #CCCCCC;
+    font-size: 14px;
+}

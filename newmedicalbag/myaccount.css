@@ -1,0 +1,75 @@
+div#myaccount{width:700px;font-size:12px;font-family:Arial;margin: 0 0 25px 0;text-align:left;}
+div#myaccount form div{text-align:left;width:700px;}
+
+section.content{}
+table tr th label span, table tr td label span{color:#c90000;padding:0 6px 0 0;}
+
+div.outside input[type=text].error,div.outside input[type=password].error,div.outside select.error{border:1px solid #c90000;}
+
+div#myaccount p,label{font-family:Arial;color:#464646;text-align:left;font-size:12px;}
+div#myaccount p{padding:12px 0;}
+div#myaccount p.larger{font-family:Arial;text-align:left;font-size:14px;}
+div#myaccount div#preferences_form label{padding:0 12px;}
+
+div#myaccount label.caps{text-transform:uppercase;}
+
+p#msgbar{border:none;padding:12px 0;color:#024377;text-align:left;}
+p#msgbar span.middle{margin:0 12px;cursor:default;}
+p#msgbar span, p#msgbar a{font-size:14px;cursor:pointer;font-weight:bold;color:#024377;}
+p#msgbar span.underline{border-bottom:3px solid #ffc806;text-decoration:none;color:#000;}
+p#msgbar span img{width:12px;}
+
+div.myacct_divider{padding:12px 0;text-align:left;color:#024377;}
+div.myacct_divider span{border-bottom:2px solid #024377;cursor:pointer;}
+
+div.outside input[type=text],div.outside input[type=password],div.outside select{
+	height:25px;
+	margin:0 0 20px 0;
+	border:5px solid #ECECED;
+	padding-left:5px;
+	box-shadow: inset 1px 1px 1px #A9A9A9, 0 0 2px #DCE9F1;
+	font-size:12px;
+	font-family:Arial;
+        vertical-align:middle;
+	background:transparent;
+}
+
+form#password_form td.pwdmsg{padding:0 0 20px 0;}
+
+div.outside select{height:35px;}
+
+input.oldemail, input.newemail1, input.newemail2{width:250px;}
+
+input.oldpassword,input.newpassword1,input.newpassword2{width:250px;}
+
+input.first{width:230px;}
+input.middle{width:32px;}
+input.last{width:330px;}
+select.suffix{width:64px;}
+select.credential{width:px;}
+
+select.gender{width:160px;}
+input.yob,input.grad_year,input.zipcode{width:60px;}
+select.specialty{width:300px;}
+
+input.address1,input.address2{width:350px;}
+input.suite{width:160px;}
+input.city{width:264px;}
+input.state{width:66px;}
+
+input.phone,input.fax,input.license,input.npi,input.dea{width:264px;}
+
+select.license_state{width:64px;}
+
+th{text-align:left;}
+td{padding:10px 0;text-align:left;}
+
+form#email_form td, form#password_form td, form#personal_information td{padding:0 12px 0 0;}
+form#preference_fields td{width:200px;}
+form#preference_fields table.buttons td{width:auto;}
+
+table.buttons tr td{padding:0 12px 0 0;}
+
+div#preferences_form table.buttons tr td{padding:12px 12px 0 0;}
+table.buttons input[type=button]{border:0 none transparent;background:#0c6fbf;color:#fff;border-radius:5px;padding:5px 10px;cursor:pointer;}
+table.buttons input[type=button]:hover{background:#85b7df;}

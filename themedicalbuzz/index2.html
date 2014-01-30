@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>TheMedicalBuzz | The Medical Buzz</title>
+<meta name='keywords' content='different keywords' />
+<meta name='description' content='different description' />
+          <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="content-language" content="en"/>
+    <meta name="language" content="en"/>
+    <link type="text/css" rel="stylesheet" href="http://fast.fonts.com/cssapi/bfcaebc8-e8fc-4dce-b043-1699748c392f.css"/>
+    <link rel="stylesheet" type="text/css" href="museofonts.css"/>
+    <link rel="stylesheet" type="text/css" href="reset.css"/>
+    <link rel="stylesheet" type="text/css" href="styles_css.css"/>
+    <link rel="stylesheet" type="text/css" href="styles_buzz.css" />
+    <script type="text/javascript" src="../script.group/jquery171.js"></script>
+    <script type="text/javascript" src="../script.group/swfobject.js"></script>
+    <script type="text/javascript" src="../script.group/hashchange.js"></script>
+    <script type="text/javascript" src="../script.group/sitewide.js"></script>
+      <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+      <script type="text/javascript" src="../script.group/jqueryisotope.js"></script>
+      <script>
+      
+/*
+initialize Isotope plugin
+*/
+  $.Isotope.prototype._masonryResizeChanged = function() {
+    return true;
+  };
+
+  $.Isotope.prototype._masonryReset = function() {
+    // layout-specific props
+    this.masonry = {};
+    this._getSegments();
+    var i = this.masonry.cols;
+    this.masonry.colYs = [];
+    while (i--) {
+      this.masonry.colYs.push( 0 );
+    }
+  
+    if ( this.options.masonry.cornerStampSelector ) {
+      var $cornerStamp = this.element.find( this.options.masonry.cornerStampSelector ),
+          stampWidth = $cornerStamp.outerWidth(true) - ( this.element.width() % this.masonry.columnWidth ),
+          cornerCols = Math.ceil( stampWidth / this.masonry.columnWidth ),
+          cornerStampHeight = $cornerStamp.outerHeight(true);
+      for ( i = Math.max( this.masonry.cols - cornerCols, cornerCols ); i < this.masonry.cols; i++ ) {
+        this.masonry.colYs[i] = cornerStampHeight;
+      }
+    }
+  };
+  
+  
+/*
+ use window.load, not document ready on this page
+*/
+
+         $(window).load(function(){
+
+/*
+ initialize filters
+*/
+  		     blog.rss.filters = " ";
+			 $.each($('#filters').children(),function(){
+				if (this.value.length > 1){
+			    	blog.rss.filters += this.value + " ";
+			    }
+ 			 })
+/*
+
+*/
+	          blog.rss.refresh();
+    	      blog.rss.linkredirect();
+    	      
+/*
+ add change event to the select tag
+*/ 
+        	  $('#filters').change(function(){
+	           var filter = this.value;
+    		   if (filter == ''){
+	             filter = '*';
+	        }
+	           window.location.hash = 'show=' + filter;
+          })
+          
+/*
+ add flash advertisement
+*/
+          if (swfobject.ua.pv[0] > 0){
+           swfobject.embedSWF("/images/site/goto_medical_bag.swf", "animatedgif", "220px", "370px", "9.0.0", "");
+          }
+          
+/*
+ animate back to the top of the page
+*/          
+          $('#backtotop').click(function(){
+          	$('html,body').animate({scrollTop:0},'slow');return false;
+          });
+  
+  		});
+
+/*
+ update the page when the hash changes
+*/
+ 
+         $(window).hashchange(
+         	function(){blog.rss.refresh();}
+         );
+         
+         
+         blog.namespace("blog.rss");        
+         blog.rss.filters = " ";
+         
+         blog.rss.refresh = function(){
+          var selector  = '*';
+          try {
+           selector = blog.rss.findparam('show');
+          }
+          catch(e){
+           selector = '*';
+          }
+         
+/*
+ call isotopefilter with the selection
+*/
+          blog.rss.isotopefilter(selector);
+          
+         }
+
+/*
+ use isotope to randomize the stories on the page
+*/
+         
+         blog.rss.isotopefilter = function(what){
+          $('#newsfeeds').isotope({ 
+           itemSelector : '.random',
+           filter: what,
+           sortBy : 'random',
+           animationOptions: {
+            duration: 750,
+            easing: 'linear',
+            queue: true
+           },
+           masonry : {
+            cornerStampSelector: '.cornerstamp'
+           }
+          });
+         }
+         
+/*
+ get the hash value
+*/
+         blog.rss.findparam = function(param){
+         var hashpairs = location.hash.substr(1).split('=');
+         var returnval = '*';
+         if (location.hash != '' && hashpairs[0] == param && blog.rss.filters.indexOf(hashpairs[1]) > -1){
+              returnval = '.' + hashpairs[1];
+         }
+         return returnval;
+         }
+
+/*
+ add click event to the story links
+*/         
+         blog.rss.linkredirect = function(){
+          $("div.newsfeeds a").click(function() {
+           link_host = this.href.split("/")[2];
+           document_host = document.location.href.split("/")[2];
+         
+           if (link_host != document_host) {
+             window.open(this.href);
+             return false;
+           }
+          });
+         }
+      </script>
+   </head>
+   <body>
+      <div class="main" >
+      <div id="rssfeed" class="home">
+         <div class="header">
+          
+  <div class="floatL"><a href="http://www.themedicalbuzz.com/"><img src="/images/site/buzz_logo.png"/></a></div>
+  <div class="floatR alignR">
+   <div class="stacklinks alignR">
+        
+    <a href="http://www.themedicalbuzz.com/login?forward=memberoffers">MEMBER OFFERS</a><span> | </span>
+    
+        
+
+    <a href="http://www.themedicalbuzz.com/about">ABOUT</a><span> | </span>
+
+    
+    <a href="http://www.themedicalbuzz.com/register">JOIN NOW</a><span> | </span>
+    <a href="http://www.themedicalbuzz.com/login">LOGIN</a>
+
+    
+   </div>
+  </div>
+  <div class="clearB"></div>
+         </div>
+         <div class="content">
+		  <div>
+                   <div class="floatL headline">A one-stop source for up-to-date medical news with something for everyone, from conference updates to tips on practice management. Hand-picked content (such as <span class="bold">AMA News</span>, <span class="bold">Clinical Trials</span>, <span class="bold">Medical Conferences</span>, and <span class="bold">Practice Management</span>) organized and easy-to-use for the busy healthcare professional who needs to be in-the-know.</div>
+                   <div class="floatR meet">
+ <div class="callout">
+   <div>
+    <div class="floatL alignL about"><div class="alignL"><a href="http://www.themedicalbuzz.com/about" class="museo520 blogblue meet">Meet our Chief Innovations Officer</a></div><a href="http://www.themedicalbuzz.com/about" class="click">Click here to read more about Innovations in Pharma</a></div>
+    <div class="floatR imgabout"><a href="http://www.themedicalbuzz.com/about"><img src="/images/site/pict-scalici-headshot.png"/></a></div>
+    <div class="clearB"></div>
+   </div>
+  </div>
+ </div>
+                   </div>
+<div class="clearB"></div>
+		  </div>
+                  <div class="banner">
+                     <select id="filters">
+                        <option value=''>Select your interest</a>
+                        <option value="*">ALL</a>
+
+<option value="JAMA">JAMA</option>
+
+<option value="ClinicalTrials">Clinical Trials</option>
+
+<option value="FDANews">FDA News</option>
+
+<option value="LatestMedicalNews">Latest Medical News</option>
+
+<option value="MedicalConferences">Medical Conferences</option>
+
+<option value="ProductAlerts">Product Alerts</option>
+
+<option value="HealthNews">Health News</option>
+
+<option value="PracticeManagement">Practice Management</option>
+
+                     </select>
+                  </div>
+                  <div class="newsfeeds" id="newsfeeds">
+
+                     <div class="cornerstamp"><div id="animatedgif"><a href="http://www.themedicalbag.com"><img src="/images/site/goto_medical_bag.gif"/></a></div></div>
+
+
+
+                     
+                     <div class="random JAMA top-and-bottom">
+                        <div class="news-feeds-outside">
+                           <div class="news-feeds-top">
+                              <div class="news-feeds-tower"><a href="http://www.themedicalbuzz.com/rssdetail/JAMA"></a></div>
+                              <div class="news-feeds-rss">
+                                 <div class="rss-title"><a class="museo718" href="http://jama.jamanetwork.com/article.aspx?articleID=1790463">JAMA</a></div>
+                                 <div class="rss-description">
+                                    <span class="paragraphSection">As articulated by the Institute of Medicine and reinforced by the recent health reform law, the United States is fostering a deliberate shift toward a more population-based...
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="news-feeds-bottomcap">
+                              <div class="read-more"><a class="museo714" href="http://jama.jamanetwork.com/article.aspx?articleID=1790463">read more &gt;&gt;</a></div>
+                              <div class="rss-link"><a href="http://www.themedicalbuzz.com/rssdetail/JAMA"></a></div>
+                           </div>
+                        </div>
+                     </div>
+                     
+
+
+
+                     
+                     <div class="random ClinicalTrials top-and-bottom">
+                        <div class="news-feeds-outside">
+                           <div class="news-feeds-top">
+                              <div class="news-feeds-tower"><a href="http://www.themedicalbuzz.com/rssdetail/ClinicalTrials"></a></div>
+                              <div class="news-feeds-rss">
+                                 <div class="rss-title"><a class="museo718" href="http://clinicaltrialsfeeds.org/clinical-trials/show/NCT02047916">Clinical Trials</a></div>
+                                 <div class="rss-description">
+                                    Status: Not yet recruiting, 
+Condition Summary: To Measure Superior Vena Cava Flow in Babies >33 Weeks Gestation; To Measure Pleth Variability Index in Babies >33 Weeks Gestation
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="news-feeds-bottomcap">
+                              <div class="read-more"><a class="museo714" href="http://clinicaltrialsfeeds.org/clinical-trials/show/NCT02047916">read more &gt;&gt;</a></div>
+                              <div class="rss-link"><a href="http://www.themedicalbuzz.com/rssdetail/ClinicalTrials"></a></div>
+                           </div>
+                        </div>
+                     </div>
+                     
+                     <div class="random ClinicalTrials top-and-bottom">
+                        <div class="news-feeds-outside">
+                           <div class="news-feeds-top">
+                              <div class="news-feeds-tower"><a href="http://www.themedicalbuzz.com/rssdetail/ClinicalTrials"></a></div>
+                              <div class="news-feeds-rss">
+                                 <div class="rss-title"><a class="museo718" href="http://clinicaltrialsfeeds.org/clinical-trials/show/NCT02047409">Clinical Trials</a></div>
+                                 <div class="rss-description">
+                                    Status: Recruiting, 
+Condition Summary: Heart Failure
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="news-feeds-bottomcap">
+                              <div class="read-more"><a class="museo714" href="http://clinicaltrialsfeeds.org/clinical-trials/show/NCT02047409">read more &gt;&gt;</a></div>
+                              <div class="rss-link"><a href="http://www.themedicalbuzz.com/rssdetail/ClinicalTrials"></a></div>
+                           </div>
+                        </div>
+                     </div>
+                     
+                     <div class="random ClinicalTrials top-and-bottom">
+                        <div class="news-feeds-outside">
+                           <div class="news-feeds-top">
+                              <div class="news-feeds-tower"><a href="http://www.themedicalbuzz.com/rssdetail/ClinicalTrials"></a></div>
+                              <div class="news-feeds-rss">
+                                 <div class="rss-title"><a class="museo718" href="http://clinicaltrialsfeeds.org/clinical-trials/show/NCT02047305">Clinical Trials</a></div>
+                                 <div class="rss-description">
+                                    Status: Active, not recruiting, 
+Condition Summary: ESOPHAGEAL SQUAMOUS CELL CARCINOMA
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="news-feeds-bottomcap">
+                              <div class="read-more"><a class="museo714" href="http://clinicaltrialsfeeds.org/clinical-trials/show/NCT02047305">read more &gt;&gt;</a></div>
+                              <div class="rss-link"><a href="http://www.themedicalbuzz.com/rssdetail/ClinicalTrials"></a></div>
+                           </div>
+                        </div>
+                     </div>
+                     
+
+
+
+                     
+                     <div class="random FDANews top-and-bottom">
+                        <div class="news-feeds-outside">
+                           <div class="news-feeds-top">
+                              <div class="news-feeds-tower"><a href="http://www.themedicalbuzz.com/rssdetail/FDANews"></a></div>
+                              <div class="news-feeds-rss">
+                                 <div class="rss-title"><a class="museo718" href="http://www.fda.gov/NewsEvents/Newsroom/PressAnnouncements/ucm383361.htm">FDA News</a></div>
+                                 <div class="rss-description">
+                                    he U.S. Food and Drug Administration, in close coordination with the Wyoming Department of Agriculture (WDA) and the U.S. Department of Agriculture (USDA), has been working to address a tragic accident...
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="news-feeds-bottomcap">
+                              <div class="read-more"><a class="museo714" href="http://www.fda.gov/NewsEvents/Newsroom/PressAnnouncements/ucm383361.htm">read more &gt;&gt;</a></div>
+                              <div class="rss-link"><a href="http://www.themedicalbuzz.com/rssdetail/FDANews"></a></div>
+                           </div>
+                        </div>
+                     </div>
+                     
+                     <div class="random FDANews top-and-bottom">
+                        <div class="news-feeds-outside">
+                           <div class="news-feeds-top">
+                              <div class="news-feeds-tower"><a href="http://www.themedicalbuzz.com/rssdetail/FDANews"></a></div>
+                              <div class="news-feeds-rss">
+                                 <div class="rss-title"><a class="museo718" href="http://www.fda.gov/NewsEvents/Newsroom/PressAnnouncements/ucm382736.htm">FDA News</a></div>
+                                 <div class="rss-description">
+                                    The U.S. Food and Drug Administration today notified Ranbaxy Laboratories, Ltd., that it is prohibited from manufacturing and distributing active pharmaceutical ingredients (APIs) from its facility in...
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="news-feeds-bottomcap">
+                              <div class="read-more"><a class="museo714" href="http://www.fda.gov/NewsEvents/Newsroom/PressAnnouncements/ucm382736.htm">read more &gt;&gt;</a></div>
+                              <div class="rss-link"><a href="http://www.themedicalbuzz.com/rssdetail/FDANews"></a></div>
+                           </div>
+                        </div>
+                     </div>
+                     
+                     <div class="random FDANews top-and-bottom">
+                        <div class="news-feeds-outside">
+                           <div class="news-feeds-top">
+                              <div class="news-feeds-tower"><a href="http://www.themedicalbuzz.com/rssdetail/FDANews"></a></div>
+                              <div class="news-feeds-rss">
+                                 <div class="rss-title"><a class="museo718" href="http://www.fda.gov/NewsEvents/Newsroom/PressAnnouncements/ucm382437.htm">FDA News</a></div>
+                                 <div class="rss-description">
+                                    The U.S. Food and Drug Administration today launched the advisory committee membership nomination portal, an online, interactive system that allows interested individuals to submit nominations for membership...
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="news-feeds-bottomcap">
+                              <div class="read-more"><a class="museo714" href="http://www.fda.gov/NewsEvents/Newsroom/PressAnnouncements/ucm382437.htm">read more &gt;&gt;</a></div>
+                              <div class="rss-link"><a href="http://www.themedicalbuzz.com/rssdetail/FDANews"></a></div>
+                           </div>
+                        </div>
+                     </div>
+                     
+
+
+
+                     
+                     <div class="random LatestMedicalNews top-and-bottom">
+                        <div class="news-feeds-outside">
+                           <div class="news-feeds-top">
+                              <div class="news-feeds-tower"><a href="http://www.themedicalbuzz.com/rssdetail/LatestMedicalNews"></a></div>
+                              <div class="news-feeds-rss">
+                                 <div class="rss-title"><a class="museo718" href="http://feedproxy.google.com/~r/mnt/healthnews/~3/KqZ3A8n52YM/271779.php">Latest Medical News</a></div>
+                                 <div class="rss-description">
+                                    A new US study finds that yoga can benefit breast cancer survivors by reducing fatigue and inflammation. While yoga has many components, the researchers believe breathing and meditation probably had the...
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="news-feeds-bottomcap">
+                              <div class="read-more"><a class="museo714" href="http://feedproxy.google.com/~r/mnt/healthnews/~3/KqZ3A8n52YM/271779.php">read more &gt;&gt;</a></div>
+                              <div class="rss-link"><a href="http://www.themedicalbuzz.com/rssdetail/LatestMedicalNews"></a></div>
+                           </div>
+                        </div>
+                     </div>
+                     
+                     <div class="random LatestMedicalNews top-and-bottom">
+                        <div class="news-feeds-outside">
+                           <div class="news-feeds-top">
+                              <div class="news-feeds-tower"><a href="http://www.themedicalbuzz.com/rssdetail/LatestMedicalNews"></a></div>
+                              <div class="news-feeds-rss">
+                                 <div class="rss-title"><a class="museo718" href="http://feedproxy.google.com/~r/mnt/healthnews/~3/5AirsQQaacM/271813.php">Latest Medical News</a></div>
+                                 <div class="rss-description">
+                                    Of all cancers, lung cancer is the biggest killer in both men and women. According to the American Lung Association, it causes more deaths than colon, breast and prostate cancer combined. Diagnosing the...
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="news-feeds-bottomcap">
+                              <div class="read-more"><a class="museo714" href="http://feedproxy.google.com/~r/mnt/healthnews/~3/5AirsQQaacM/271813.php">read more &gt;&gt;</a></div>
+                              <div class="rss-link"><a href="http://www.themedicalbuzz.com/rssdetail/LatestMedicalNews"></a></div>
+                           </div>
+                        </div>
+                     </div>
+                     
+                     <div class="random LatestMedicalNews top-and-bottom">
+                        <div class="news-feeds-outside">
+                           <div class="news-feeds-top">
+                              <div class="news-feeds-tower"><a href="http://www.themedicalbuzz.com/rssdetail/LatestMedicalNews"></a></div>
+                              <div class="news-feeds-rss">
+                                 <div class="rss-title"><a class="museo718" href="http://feedproxy.google.com/~r/mnt/healthnews/~3/VeOeo2owvqM/271807.php">Latest Medical News</a></div>
+                                 <div class="rss-description">
+                                    Researchers from Penn State University and the University of California have discovered how a protein is crucial for the growth of healthy cells in mammals. This is according to a study published in the...
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="news-feeds-bottomcap">
+                              <div class="read-more"><a class="museo714" href="http://feedproxy.google.com/~r/mnt/healthnews/~3/VeOeo2owvqM/271807.php">read more &gt;&gt;</a></div>
+                              <div class="rss-link"><a href="http://www.themedicalbuzz.com/rssdetail/LatestMedicalNews"></a></div>
+                           </div>
+                        </div>
+                     </div>
+                     
+
+
+
+                     
+                     <div class="random MedicalConferences top-and-bottom">
+                        <div class="news-feeds-outside">
+                           <div class="news-feeds-top">
+                              <div class="news-feeds-tower"><a href="http://www.themedicalbuzz.com/rssdetail/MedicalConferences"></a></div>
+                              <div class="news-feeds-rss">
+                                 <div class="rss-title"><a class="museo718" href="http://www.medicalnewstoday.com/releases/271817.php">Medical Conferences</a></div>
+                                 <div class="rss-description">
+                                    New Addition To Oxford Global Asia Events in 2014: Microbiology and Infectious Disease Asia Congress As global concern grows over drug-resistant infections and the prevalence of infectious diseases, researchers...
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="news-feeds-bottomcap">
+                              <div class="read-more"><a class="museo714" href="http://www.medicalnewstoday.com/releases/271817.php">read more &gt;&gt;</a></div>
+                              <div class="rss-link"><a href="http://www.themedicalbuzz.com/rssdetail/MedicalConferences"></a></div>
+                           </div>
+                        </div>
+                     </div>
+                     
+                     <div class="random MedicalConferences top-and-bottom">
+                        <div class="news-feeds-outside">
+                           <div class="news-feeds-top">
+                              <div class="news-feeds-tower"><a href="http://www.themedicalbuzz.com/rssdetail/MedicalConferences"></a></div>
+                              <div class="news-feeds-rss">
+                                 <div class="rss-title"><a class="museo718" href="http://www.medicalnewstoday.com/releases/271816.php">Medical Conferences</a></div>
+                                 <div class="rss-description">
+                                    With the current volatility of the health care industry, many medical device manufacturers are plagued with questions and concerns about their products. Opal Events' 5th Annual Medical Devices Summit strives...
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="news-feeds-bottomcap">
+                              <div class="read-more"><a class="museo714" href="http://www.medicalnewstoday.com/releases/271816.php">read more &gt;&gt;</a></div>
+                              <div class="rss-link"><a href="http://www.themedicalbuzz.com/rssdetail/MedicalConferences"></a></div>
+                           </div>
+                        </div>
+                     </div>
+                     
+                     <div class="random MedicalConferences top-and-bottom">
+                        <div class="news-feeds-outside">
+                           <div class="news-feeds-top">
+                              <div class="news-feeds-tower"><a href="http://www.themedicalbuzz.com/rssdetail/MedicalConferences"></a></div>
+                              <div class="news-feeds-rss">
+                                 <div class="rss-title"><a class="museo718" href="http://www.medicalnewstoday.com/releases/271759.php">Medical Conferences</a></div>
+                                 <div class="rss-description">
+                                    The healthcare industry is highly regulated, involves many moving parts and ultimately has an impact on people's health and well-being. IQPC's Information Governance and eDiscovery for Healthcare is designed...
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="news-feeds-bottomcap">
+                              <div class="read-more"><a class="museo714" href="http://www.medicalnewstoday.com/releases/271759.php">read more &gt;&gt;</a></div>
+                              <div class="rss-link"><a href="http://www.themedicalbuzz.com/rssdetail/MedicalConferences"></a></div>
+                           </div>
+                        </div>
+                     </div>
+                     
+
+
+
+                     
+                     <div class="random ProductAlerts top-and-bottom">
+                        <div class="news-feeds-outside">
+                           <div class="news-feeds-top">
+                              <div class="news-feeds-tower"><a href="http://www.themedicalbuzz.com/rssdetail/ProductAlerts"></a></div>
+                              <div class="news-feeds-rss">
+                                 <div class="rss-title"><a class="museo718" href="http://www.medpagetoday.com/PublicHealthPolicy/FDAGeneral/35431">Product Alerts</a></div>
+                                 <div class="rss-description">
+                                    WASHINGTON -- The FDA has expanded the indication for the cancer drug pemetrexed injection to act as a maintenance therapy with cisplatin for nonsquamous non-small cell lung cancer.
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="news-feeds-bottomcap">
+                              <div class="read-more"><a class="museo714" href="http://www.medpagetoday.com/PublicHealthPolicy/FDAGeneral/35431">read more &gt;&gt;</a></div>
+                              <div class="rss-link"><a href="http://www.themedicalbuzz.com/rssdetail/ProductAlerts"></a></div>
+                           </div>
+                        </div>
+                     </div>
+                     
+                     <div class="random ProductAlerts top-and-bottom">
+                        <div class="news-feeds-outside">
+                           <div class="news-feeds-top">
+                              <div class="news-feeds-tower"><a href="http://www.themedicalbuzz.com/rssdetail/ProductAlerts"></a></div>
+                              <div class="news-feeds-rss">
+                                 <div class="rss-title"><a class="museo718" href="http://www.medpagetoday.com/PublicHealthPolicy/FDAGeneral/35424">Product Alerts</a></div>
+                                 <div class="rss-description">
+                                    ﻿WASHINGTON -- The FDA has approved ocriplasmin (Jetrea) as the first nonsurgical treatment for symptomatic vitreomacular adhesion.
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="news-feeds-bottomcap">
+                              <div class="read-more"><a class="museo714" href="http://www.medpagetoday.com/PublicHealthPolicy/FDAGeneral/35424">read more &gt;&gt;</a></div>
+                              <div class="rss-link"><a href="http://www.themedicalbuzz.com/rssdetail/ProductAlerts"></a></div>
+                           </div>
+                        </div>
+                     </div>
+                     
+                     <div class="random ProductAlerts top-and-bottom">
+                        <div class="news-feeds-outside">
+                           <div class="news-feeds-top">
+                              <div class="news-feeds-tower"><a href="http://www.themedicalbuzz.com/rssdetail/ProductAlerts"></a></div>
+                              <div class="news-feeds-rss">
+                                 <div class="rss-title"><a class="museo718" href="http://www.medpagetoday.com/Pediatrics/GeneralPediatrics/35427">Product Alerts</a></div>
+                                 <div class="rss-description">
+                                    Detergent packaged in single-load 'pods' are time-saving, but are also attractive to children who mistake the pods for treats, making this laundry aid a poisoning risk.
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="news-feeds-bottomcap">
+                              <div class="read-more"><a class="museo714" href="http://www.medpagetoday.com/Pediatrics/GeneralPediatrics/35427">read more &gt;&gt;</a></div>
+                              <div class="rss-link"><a href="http://www.themedicalbuzz.com/rssdetail/ProductAlerts"></a></div>
+                           </div>
+                        </div>
+                     </div>
+                     
+
+
+
+                     
+                     <div class="random HealthNews top-and-bottom">
+                        <div class="news-feeds-outside">
+                           <div class="news-feeds-top">
+                              <div class="news-feeds-tower"><a href="http://www.themedicalbuzz.com/rssdetail/HealthNews"></a></div>
+                              <div class="news-feeds-rss">
+                                 <div class="rss-title"><a class="museo718" href="http://medicalxpress.com/news/2014-01-parents-unclear-specialist-kids.html">Health News</a></div>
+                                 <div class="rss-description">
+                                    Parents vary widely in views about their responsibilities in getting specialty care for their children, according to a new University of Michigan C.S. Mott Children's Hospital National Poll on Children's...
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="news-feeds-bottomcap">
+                              <div class="read-more"><a class="museo714" href="http://medicalxpress.com/news/2014-01-parents-unclear-specialist-kids.html">read more &gt;&gt;</a></div>
+                              <div class="rss-link"><a href="http://www.themedicalbuzz.com/rssdetail/HealthNews"></a></div>
+                           </div>
+                        </div>
+                     </div>
+                     
+                     <div class="random HealthNews top-and-bottom">
+                        <div class="news-feeds-outside">
+                           <div class="news-feeds-top">
+                              <div class="news-feeds-tower"><a href="http://www.themedicalbuzz.com/rssdetail/HealthNews"></a></div>
+                              <div class="news-feeds-rss">
+                                 <div class="rss-title"><a class="museo718" href="http://medicalxpress.com/news/2014-01-nurses.html">Health News</a></div>
+                                 <div class="rss-description">
+                                    (HealthDay)—The number of registered nurses in the United States who smoke fell by more than a third between 2003 and 2011, a new study shows.
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="news-feeds-bottomcap">
+                              <div class="read-more"><a class="museo714" href="http://medicalxpress.com/news/2014-01-nurses.html">read more &gt;&gt;</a></div>
+                              <div class="rss-link"><a href="http://www.themedicalbuzz.com/rssdetail/HealthNews"></a></div>
+                           </div>
+                        </div>
+                     </div>
+                     
+                     <div class="random HealthNews top-and-bottom">
+                        <div class="news-feeds-outside">
+                           <div class="news-feeds-top">
+                              <div class="news-feeds-tower"><a href="http://www.themedicalbuzz.com/rssdetail/HealthNews"></a></div>
+                              <div class="news-feeds-rss">
+                                 <div class="rss-title"><a class="museo718" href="http://medicalxpress.com/news/2014-01-gut-bacteria-preemies-hospital.html">Health News</a></div>
+                                 <div class="rss-description">
+                                    (HealthDay)—Gut bacteria in premature infants don't come from their mothers, but from microbes in the neonatal intensive-care unit (NICU), a new study finds.
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="news-feeds-bottomcap">
+                              <div class="read-more"><a class="museo714" href="http://medicalxpress.com/news/2014-01-gut-bacteria-preemies-hospital.html">read more &gt;&gt;</a></div>
+                              <div class="rss-link"><a href="http://www.themedicalbuzz.com/rssdetail/HealthNews"></a></div>
+                           </div>
+                        </div>
+                     </div>
+                     
+
+
+
+                     
+                     <div class="random PracticeManagement top-and-bottom">
+                        <div class="news-feeds-outside">
+                           <div class="news-feeds-top">
+                              <div class="news-feeds-tower"><a href="http://www.themedicalbuzz.com/rssdetail/PracticeManagement"></a></div>
+                              <div class="news-feeds-rss">
+                                 <div class="rss-title"><a class="museo718" href="http://www.medicalnewstoday.com/articles/271536.php">Practice Management</a></div>
+                                 <div class="rss-description">
+                                    A new study published in The Lancet has questioned the care of heart attack patients in the UK - stating that the chance of surviving a heart attack in the country is significantly lower than in Sweden....
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="news-feeds-bottomcap">
+                              <div class="read-more"><a class="museo714" href="http://www.medicalnewstoday.com/articles/271536.php">read more &gt;&gt;</a></div>
+                              <div class="rss-link"><a href="http://www.themedicalbuzz.com/rssdetail/PracticeManagement"></a></div>
+                           </div>
+                        </div>
+                     </div>
+                     
+                     <div class="random PracticeManagement top-and-bottom">
+                        <div class="news-feeds-outside">
+                           <div class="news-feeds-top">
+                              <div class="news-feeds-tower"><a href="http://www.themedicalbuzz.com/rssdetail/PracticeManagement"></a></div>
+                              <div class="news-feeds-rss">
+                                 <div class="rss-title"><a class="museo718" href="http://www.medicalnewstoday.com/articles/271467.php">Practice Management</a></div>
+                                 <div class="rss-description">
+                                    Though no time is a good time to have a heart attack, a new study reveals that patients visiting the hospital at night or on the weekend for a heart attack have higher mortality than those visiting during...
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="news-feeds-bottomcap">
+                              <div class="read-more"><a class="museo714" href="http://www.medicalnewstoday.com/articles/271467.php">read more &gt;&gt;</a></div>
+                              <div class="rss-link"><a href="http://www.themedicalbuzz.com/rssdetail/PracticeManagement"></a></div>
+                           </div>
+                        </div>
+                     </div>
+                     
+                     <div class="random PracticeManagement top-and-bottom">
+                        <div class="news-feeds-outside">
+                           <div class="news-feeds-top">
+                              <div class="news-feeds-tower"><a href="http://www.themedicalbuzz.com/rssdetail/PracticeManagement"></a></div>
+                              <div class="news-feeds-rss">
+                                 <div class="rss-title"><a class="museo718" href="http://www.medicalnewstoday.com/articles/271485.php">Practice Management</a></div>
+                                 <div class="rss-description">
+                                    Though parents might expect their children to receive consistent care across hospitals in the US for routine procedures, a new study published in the journal Pediatrics investigates how quality of care...
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="news-feeds-bottomcap">
+                              <div class="read-more"><a class="museo714" href="http://www.medicalnewstoday.com/articles/271485.php">read more &gt;&gt;</a></div>
+                              <div class="rss-link"><a href="http://www.themedicalbuzz.com/rssdetail/PracticeManagement"></a></div>
+                           </div>
+                        </div>
+                     </div>
+                     
+
+
+
+                  </div>
+<div class="backtotop"><a id="backtotop" class="museo517">Back to top <img src="/images/site/BackToTop_arrow.png"/></a></div>
+               </div>
+            <div class="footer">
+                 <div class="footer-copy">
+    <a href="http://www.themedicalbuzz.com/">Home</a> | 
+    <a href="http://www.themedicalbuzz.com/about">About</a> | 
+
+    
+    <a href="http://www.themedicalbuzz.com/register">Join now</a> | 
+    <a href="http://www.themedicalbuzz.com/login">Login</a> | 
+
+    
+    <a href="http://www.themedicalbuzz.com/privacy-policy">Privacy Policy</a> | 
+    <a href="http://www.themedicalbuzz.com/terms">Terms of Service</a> | 
+    <a href="http://www.themedicalbuzz.com/contactus">Contact Us</a>
+  </div>
+  &copy; 2014.  All rights reserved.
+     <br/><br/>
+  <img src="/images/site/pdi-bug.png"/>
+            </div>
+      </div>
+   </body>
+</html>

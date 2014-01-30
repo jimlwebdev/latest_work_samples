@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Page Share</title>
+<link rel="icon" href="/images/site/favicon.png" type="image/png"/>
+<link href='http://fonts.googleapis.com/css?family=Oxygen:400,700,300' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href="http://fast.fonts.com/cssapi/bfcaebc8-e8fc-4dce-b043-1699748c392f.css"/>
+<link rel="stylesheet" type="text/css" media="all" href="/pdonecss/reset"/>
+<link rel="stylesheet" type="text/css" href="/pdonecss/oxygenstyles"/>
+<link rel="stylesheet" type="text/css" href="/pdonecss/rep_connect_styles"/>
+<link rel="stylesheet" type="text/css" href="/pdonecss/brandpage"/>
+<link rel="stylesheet" type="text/css" href="/pdonecss/grid960" />
+<script type="text/javascript" src="/pdonejs/jquery191"></script>
+<script type="text/javascript" src="/pdonejs/jqueryui"></script>
+<script type="text/javascript" src="/pdonejs/sitewide"></script>
+<script type="text/javascript" src="/pdonejs/handlebars"></script>
+<script type="text/javascript" src="/pdonejs/handlebarshelpers"></script>
+<script type="text/javascript" src="/pdonejs/withinViewport"></script>
+<script type="text/javascript" src="/pdonejs/jqueryWithinViewport"></script>
+<!--[if lt IE 9]><script type="text/javascript" src="/pdonejs/html5shiv"></script><![endif]-->
+<script type="text/javascript">
+$(function(){
+  pdone.site.docReady();
+  pdone.page.docReady();
+});
+
+	pdone.namespace('pdone.storage');
+	pdone.storage.hcp_id = "52e00165f6b98cd2198b0cec";
+	pdone.storage.name =  "Michelle Adams, MD";
+	pdone.storage.photo_id =  "webdrProfileIcon.png";
+	pdone.storage.env =  "qa-";
+	pdone.storage.hcp_specialty =  "Obstetric Critical Care Medicine" ;
+	pdone.storage.prog_path = "http://tmb_rpc.qa.stg1.pdone.com/";
+	pdone.storage.data_path = "http://ce6f5c0d571caedf6f24-e054bbfa408a9b8d92818c790c3ecc4b.r47.cf2.rackcdn.com/";
+        pdone.storage.edetails_present = "";
+        pdone.storage.edetails_panel_member_id = "";
+        pdone.storage.version = "release 1.0.0 1/16/2014";
+        pdone.storage.brand_id =  16 ;
+	</script>
+		
+</head>
+   <body id="rep_connect">
+	<header>
+		<div class="header_top">
+			<div class="header_top_container container">
+				<div class="header_img_mb floatL"><img src="/images/site/MB-icon.png" /></div>
+				<div class="header_img_arrow floatL"><img src="/images/site/dotted-arrow.png" /></div>
+				<div class="header_img_mr floatL"><img src="/images/site/myreps.png" /></div>
+				<div class="header_rep_msg_ctr floatR"><span id="main_rep_msg_ctr"></span></div>
+				<div class="main_rep_message floatR">
+					<img src="/images/site/rep-messages.png"/>
+				</div>
+				<div id="main_hcp_name" class="main_hcp_name floatR"><span></span> <img src="/images/site/blue-chevron.png">
+					<div class="tempDD"><div><a href="/pdone/myaccount">My Account</a></div><div><a href="/pdone/logout">Log Out</a></div></div>
+				</div>
+				<div class="clearB"></div>
+			</div>
+		</div>
+		<div class="header_gutter"></div>
+		<div class="header_bottom">
+			<div class="header_bottom_container container">
+				<div class="header_img_back floatL"><img src="/images/site/back-circle-arrow.png" /></div>
+				<p class="header_link_back oxygen"><a class="nounderline" href="/">Go to The Medical Bag </a></p>
+				<div class="clearB"></div>
+			</div>
+		</div>
+	</header>
+	<main class="container_12">
+<div id="pdone_msg" class="grid_12">
+ <div class="grid_1 padR20">&nbsp;</div><div class="grid_10 arial">Your TheMedicalBag.com account has been created.</div><div class="grid_1 padL20 alignC"><img id="close_msg" src="/images/site/close.png"/></div>
+</div>
+		<div class="main_container container overflow">
+<div>
+			<div class="main_container_left floatL">
+				<div class="main_company_logos overflow" id="main_company_logos">
+				</div>
+				
+			</div>
+			<div class="main_container_right floatL">
+				<div class="main_rep_info arial">
+					<div class="main_rep_text floatL">
+						<p class="paragraph_text bold alignR">My Sales Representative</p>
+						<p class="alignR"><span class="rep_name">[Rep Name]</span></p><br/><br/>
+						<p class="alignR"><button>Contact Rep &raquo</button></p>
+					</div>
+					<div class="main_rep_image floatL">
+						<img src="/images/site/default-rep-portrait"/>
+					</div>
+					<div class="clearB"></div>
+				</div>
+			</div>
+			<div class="clearB"></div>
+</div>
+<div>
+<div class="main_login_form text_gray arial" id="leftside"></div>
+</div>
+		</div>
+	</main>
+	<footer>
+		<div class="isi" id="fullISI">
+		</div>
+		<div class="footer" id="brand_footer">
+		</div>
+	</footer>
+	<div class="isi_cover isi" id="coverISI">
+		<div class="isi_expand alignR" onclick="pdone.page.expandISI()">
+			<div class="isi_expand_text floatL"><a class="text_babyblue paragraph_text arial">CLICK TO EXPAND</a></div>
+			<div class="isi_expand_img floatL"><img src="/images/site/expand-ISI.png" /></div>
+			<div class="clearB"></div>
+		</div>
+	</div>
+	<script type="text/javascript" src="/pdonescript/brandpage"></script>
+   </body>
+
+<script type="text-template" id="tmplt_hellodr">
+<p class="alignL oxygen722">Hello, <span id="hellodr_name"></span></p>
+<p class="h1tag">{{company.brands.[0].brand_greeting}}</p>
+</script>
+
+<script type="text-template" id="tmplt_brandshares">
+<div class="oxygen722 alignL">My Content</div>
+{{#shares}}
+ <div class="new_to_tmb_{{new_to_tmb}}">
+  <div class="floatL grid_3">
+   <div class="repimg">
+     <img class="grid_3" src="http://adde171c6df7347841bb-aea1ddd40b8cbcaa4132fefc36d1fb51.r33.cf2.rackcdn.com/webdrProfileIcon.png">
+     <img class="new" src="/images/site/new_indicator.png"/>
+   </div>
+  </div>
+  <div class="floatR padL20 grid_9 alignL">
+   <div class="contentstream alignL">
+    <p class="oxygen718">{{media_title}}</p>
+    <p>{{share_date}}</p>
+    <p class="oxygen714">{{media_description}}</p>
+   </div>
+   <div class="linkbutton alignL">
+     <button onclick="window.open('{{server_path_to_media}}')">view &raquo</button><span>[{{media_size}} {{media_units}}]</span>
+   </div>
+  </div>
+  <div class="clearB"></div>
+ </div>
+{{/shares}}
+</script>
+
+<script type="text-template" id="tmplt_tower">
+ {{#company.brands}}
+	<div>
+		<div class="floatL alignR repinfo">
+			<p class="">{{rep.[0].title}}</p>
+			<p class="">{{rep.[0].first}} {{rep.[0].last}}</p>
+			<button value="" id="contactrep" type="button">Contact rep</button>
+		</div>
+		<div class="floatR"><img class="repimg" src="{{rep.[0].photo_id}}"/></div>
+		<div class="clearB"></div>
+	</div>
+	<div>
+		<p class="isimsg alignL">{{isi.pi.text}}</p>
+		<p class="isititle alignL">IMPORTANT SAFETY INFORMAITON</p>
+		<p class="isiwarningtitle alignC">{{isi.black_box.[0].heading}}</p>
+		<p class="isiwarningtext alignL">{{isi.black_box.[0].body}}</p>
+		<p class="isishort alignL">
+			<ul class="short_isi">
+				<li>{{isi.partial.[0].txt}}
+					<ul>
+						<li>{{isi.partial.[1].txt}}</li>
+						<li>{{isi.partial.[2].txt}}</li>
+					</ul>
+				</li>
+			</ul>
+		</p>
+	</div>
+	<p class="alignC">
+		<button type="button" class="">View full ISI</button>
+	</p>
+ {{/company.brands}}
+</script>
+
+<script type="text-template" id="tmplt_coverisi">
+			<div class="container">
+				<div class="isi_wrapper_text">
+					<p class="paragraph_text">Please see <a class="text_lightblue underline">full Prescribing Information and Medication Guide</a>, including <span class="bold">BOXED WARNING</span> regarding Abuse and Dependence.</p>
+				</div>
+				<div class="isi_content arial">
+					<h2 class="isi_header_text text_babyblue margin_top30">IMPORTANT SAFETY INFORMATION AND INDICATION</h2>
+					{{#company.brands}}{{#isi.black_box}}
+					<div class="isi_boxed_content">
+					  <h2 class="isi_header_text center">{{heading}}</h2>
+					  <p class="paragraph_text">{{body}}</p>
+					</div>
+					{{/isi.black_box}}{{/company.brands}}
+				</div>
+				<div class="isi_list arial">
+					<ul class="paragraph_text">
+					 {{#company.brands}}{{#each isi.partial}}<li class="level{{level}}">{{text}}</li>{{/each}}{{/company.brands}}
+					</ul>
+				</div>
+			</div>
+</script>
+
+<script type="text-template" id="tmplt_fullisi">
+			<div class="container">
+				
+				<div class="isi_wrapper_text">
+					<p class="paragraph_text">Please see <a class="text_lightblue underline">full Prescribing Information and Medication Guide</a>, including <span class="bold">BOXED WARNING</span> regarding Abuse and Dependence.</p>
+				</div>
+				<div class="isi_content arial">
+					<h2 class="isi_header_text text_babyblue margin_top30">IMPORTANT SAFETY INFORMATION AND INDICATION</h2>
+					{{#company.brands}}{{#isi.black_box}}
+					<div class="isi_boxed_content">
+					  <h2 class="isi_header_text center">{{heading}}</h2>
+					  <p class="paragraph_text">{{body}}</p>
+					</div>
+					{{/isi.black_box}}{{/company.brands}}
+					<div class="isi_list">
+						<ul class="paragraph_text">
+						 {{#company.brands}}{{#each isi.partial}}<li class="level{{level}}"><span class="hidecoverisi">{{text}}</span></li>{{/each}}{{/company.brands}}
+						</ul>
+						<ul class="paragraph_text">						
+						 {{#company.brands}}{{#each isi.continued}}<li class="level{{level}}"><span class="hidecoverisi">{{text}}</span></li>{{/each}}{{/company.brands}}
+						</ul>
+					</div>
+					<h2 class="isi_header_text text_babyblue margin_top30">INDICATION</h2>
+					{{#company.brands}}<p class="paragraph_text">{{indication}}</p>{{/company.brands}}
+				</div>
+				<div class="isi_wrapper_text">
+					<p class="paragraph_text">Please see <a class="text_lightblue underline">full Prescribing Information and Medication Guide</a>, including <span class="bold">BOXED WARNING</span> regarding Abuse and Dependence.</p>
+				</div>
+			</div>
+</script>
+
+<script type="text-template" id="tmplt_addlinfo">
+<p>
+{{#company.brands}}
+{{#each contact}}
+{{.}}<br/>
+{{/each}}
+{{misc_footer_text}}<br/>
+<img src=""/>{{{copyright_text}}}
+{{/company.brands}}
+</p>
+</script>
+
+<script type="text-template" id="tmplt_reprequest">
+<form id="form_reprequest" action=>
+<input type="hidden" name="rep_id" value="{{rep.id}}"/>
+{{#company.brands}}
+{{#hcp_to_rep_msg}}
+<input type="radio" name="reprequest" value="{{id}}"/><label>{{txt}}</label><br/>
+{{#if options}}
+<select name="requestoption">
+<option value="">Select one...</option>
+{{#options}}
+<option value="{{id}}">{{txt}}</option>
+{{/options}}
+</select>
+{{/if}}
+{{/hcp_to_rep_msg}}
+{{/company.brands}}
+<br/>
+<button id="btn_cancel" type="button">cancel</button><button id="btn_send" type="button">send</button>
+</form>
+</script>
+
+<script type="text-template" id="tmplt_main_company_logos">
+	<div class="floatL"><img src="{{company.logos.medium}}" class="floatL" /></div>
+	<div class="floatL"><img src="/images/site/dotted-logo-separator.png" class="floatL"  /></div>
+	<div class="floatL"><img src="{{company.brands.[0].logos.medium}}" class="floatL" /></div>
+	<div class="clearB"></div>
+</script>
+
+<script type="text-template" id="tmplt_presentations">{{#shares}}{{session_presentation_id}},{{/shares}}</script>
+
+<script type="text-template" id="tmplt_footer">
+<div class="footer">
+	<div class="container">
+		<div class="brand_footer_text">
+			<p class="info_text arial">{{company.brands.[0].misc_footer_text}}</p>
+		</div>
+		<div class="brand_copyright">
+			<img id="logo_brand_copyright" class="floatL" src="{{company.logos.medium}}" />
+			<p class="floatL copyright_text arial">{{{company.brands.[0].copyright_text}}}</p>
+			<div class="clearB"></div>
+		</div>
+		<div class="medical_bag_footer arial center">
+			<img src="/images/site/footer-logo-MB.png" />
+			<p class="mb_copyright_text text_gray">&#169;2014 PDI. ALL RIGHTS RESERVED</p>
+			<p class="mb_copyright_text text_gray">THIS MATERIAL MAY NOT BE PUBLISHED, BROADCAST, REWRITTEN, OR REDISTRIBUTED IN ANY FORM WITHOUT PRIOR AUTHORIZATION</p>
+			<p class="mb_copyright_text text_gray">YOUR USE OF THIS WEBSITE CONSTITUTES ACCEPTANCE OF PDI'S PRIVACY POLICY AND TERMS & CONDITIONS.</p>
+		</div>
+	</div>
+</div>
+</script>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="content-language" content="en"/>
+    <meta name="language" content="en"/>
+    <link rel="icon" href="/images/site/favicon.png" type="image/png"/>
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700,300' rel='stylesheet' type='text/css'>
+    <link type="text/css" rel="stylesheet" href="http://fast.fonts.com/cssapi/bfcaebc8-e8fc-4dce-b043-1699748c392f.css"/>
+    <link rel="stylesheet" type="text/css" href="/pdonecss/oxygenfonts"/>
+    <link rel="stylesheet" type="text/css" href="/pdonecss/reset"/>
+    <link rel="stylesheet" type="text/css" href="/pdonecss/styles"/>
+    <script type="text/javascript" src="/pdonejs/jquery191"></script>
+    <script type="text/javascript" src="/pdonejs/sitewide"></script>
+    <script type="text/javascript" src="/pdonejs/handlebars"></script>
+    <script type="text/javascript" src="/pdonejs/handlebarshelpers"></script>
+<!--[if lt IE 9]><script type="text/javascript" src="/pdonejs/html5shiv"></script><![endif]-->
+<script type="text/javascript">
+$(function(){
+  pdone.site.docReady();
+  pdone.page.docReady();
+});
+</script>
+<link rel="stylesheet" type="text/css" href="/pdonecss/search_results"/>
+<!--[if lt IE 9]><script type="text/javascript" src="/pdonejs/ie7hacks"></script><![endif]-->
+</head>
+   <body>
+      	<script>
+	pdone.namespace('pdone.storage');
+	pdone.storage.hcp_id = "521b4328e4c6acbe7c039ed4";
+	pdone.storage.name =  "jim locascio, MD";
+	pdone.storage.photo_id =  "pic_521cbadee4c6ac8415fe0a25.jpeg";
+	pdone.storage.env =  "prod-";
+	pdone.storage.hcp_specialty =  "Allergy" ;
+	pdone.storage.prog_path = "https://ajax.pdone.com/";
+	pdone.storage.data_path = "http://adde173c6df7347841bb-aea1ddd40b8cbcaa4132fefc36d1fb51.r33.cf2.rackcdn.com/";
+        pdone.storage.edetails_present = "no";
+        pdone.storage.edetails_panel_member_id = "";
+        pdone.storage.version = " - release 1.2.0 12/16/13";
+
+var new_member={}
+
+pdone.storage.go_home = 'no';
+
+    if (pdone.storage.go_home=="yes") {window.location.href="/";}
+</script>
+      <div class="outside" id="pdone_search_results">
+         <div class="inside">
+           <main>
+		    <div class="main">
+			   <section class="content">
+				<div id="search_results_content">
+ <div class="bottom24"><p class="museo722 uppercase">Search Results</p></div>
+ <div class="filters">
+  <div class="search_box"><input type="text" id="search_page_input"/><img id="search_page_action" src="/images/site/btn-doSearch.png"/></div>
+  <div class="results">
+   <p class="bold">Filter results by</p>
+   <br/>
+    <form id="filter_form">
+     <input type="radio" name="filter_results" value="people" id="filter_people"/><label for="filter_people">People <span></span></label>
+     <input type="radio" name="filter_results" value="groups" id="filter_groups"/><label for="filter_groups" class="middle">Forums <span></span></label>
+     <input type="radio" name="filter_results" value="news" id="filter_news"/><label for="filter_news">News <span></span></label>
+    </form>
+  </div>
+ </div>
+ <div id="search_results_html">
+ <div class="pages"><span class="first_link">&#171;</span><span class="previous_link">prev</span><span class="displaycount" id="displaycount"></span><span class="next_link">next</span><span class="last_link">&#187;</span></div>
+  <div id="people_search">
+  </div>
+  <div id="groups_search">
+  </div>
+  <div id="news_search">
+  </div>
+ </div>
+ <div class="pages"><span class="first_link">&#171;</span><span class="previous_link">prev</span><span class="displaycount" id="displaycount"></span><span class="next_link">next</span><span class="last_link">&#187;</span></div>
+</div>
+
+			   </section>
+			</div>
+			<div class="clearB"></div>
+		   </main>
+         </div>
+      </div>
+
+   </body>
+
+<script type="text-template" id="search_results_people">
+{{#.}}
+ <div class="search_item">
+  <div class="logo">
+   <a href="/pdone/profile?member_id={{id}}"><img src="pdone.storage.data_path{{thumbnail}}"/></a>
+  </div>
+  <div class="desc">
+<a href="/pdone/profile?member_id={{id}}" class="blue museo712">{{firstName}} {{lastName}}{{#credentials credential}}{{/credentials}}</a><br/>
+{{desc1}}<br/>
+{{desc2}}<br/>
+{{#citystate city state}}{{/citystate}}
+  </div>
+  <div class="clearB"></div>
+ </div>
+{{/.}}
+</script>
+
+<script type="text-template" id="search_results_groups">
+{{#.}}
+ <div class="search_item">
+  <div class="logo">
+  {{#if parent}}
+    <a href="/pdone/forumsComments?forum_id={{parent.id}}&topic_id={{id}}"><img src="pdone.storage.data_path{{photo_id}}"/></a>
+  {{else}}
+    <a href="/pdone/forumsSpecific?forum_id={{id}}"><img src="pdone.storage.data_path{{photo_id}}"/></a>
+  {{/if}}
+  </div>
+  <div class="desc">
+  {{#if parent}}
+    <a href="/pdone/forumsComments?forum_id={{parent.id}}&topic_id={{id}}" class="blue museo712">Topic: {{name}}</a><br/>Posted by {{author}} on {{parent.date}}<br/>{{desc}}<br/>
+  {{else}}
+    <a href="/pdone/forumsSpecific?forum_id={{id}}" class="blue museo712">{{name}}</a><br/>{{#plural members ' follower'}}{{/plural}}<br/>{{desc}}
+  {{/if}}
+  </div>
+  <div class="clearB"></div>
+ </div>
+{{/.}}
+</script>
+
+<script type="text-template" id="search_results_news">
+{{#.}}
+ <div class="search_item">
+  <div class="logo">
+   <a href="/pdone/newsArticle?article_id={{id}}"><img src="pdone.storage.data_path{{thumbnail}}"/></a>
+  </div>
+  <div class="desc">
+   <a href="/pdone/newsArticle?article_id={{id}}" class="blue museo712">{{title}}</a><br/><span class="bold">{{date}}</span><br/><span>{{{desc}}}</span><br/><br/><span class="views_count">{{#plural views 'view'}}{{/plural}}</span><img class="quotebubble" src="/images/site/quote_bubble.png"/><span class="comment_count">{{#plural comment_count 'comment'}}{{/plural}}</span>
+  </div>
+  <div class="clearB"></div>
+ </div>
+{{/.}}</script>
+
+<script type="text-template" id="search_results_none">
+<div class="hide search_results_none">
+<p>Sorry, there are no <span class="search_filter_none"></span> results for - <span class="search_phrase_none"></span> - in our database. Please try a different search.</p>
+<p>Suggestions:</p>
+<ul>
+<li>Make sure all words are spelled correctly.</li>
+<li>Try different keywords.</li>
+<li>Try more general keywords.</li>
+<li>Try fewer keywords.</li>
+</ul>
+</div>
+</script>
+<script type="text/javascript" src="/pdonescript/search_results"></script>
+</html>

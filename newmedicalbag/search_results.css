@@ -1,0 +1,50 @@
+div#people_search,div#news_search,div#groups_search{display:none;}
+div.pages{padding:12px 0;display:none;}
+div.pages span{/*padding:0 3px;background:#e0e0e0;margin:0 6px;border-radius:5px;color:#878787;font-size:11px;font-weight:bold;*/cursor:pointer;}
+div.pages span#displaycount{background:transparent;padding:0 6px;}
+div.bottom24{padding:0 0 24px 0;}
+span#displaycount{cursor:auto;font-size:11px;}
+
+a.blue, span.blue{color:#085DAB;/*cursor:pointer;*/}
+
+div#search_results_content{padding:0 0 65px 0;}
+div#search_results_content div{text-align:left;}
+div#search_results_content div.filters div{padding:36px 0 18px 0;}
+div#search_results_content div.filters div.search_box{
+	margin:0;
+	border:5px solid #ECECED;
+	padding:1px 0 5px 5px;
+	box-shadow: inset 1px 1px 1px #A9A9A9, 0 0 2px #DCE9F1;
+	width:626px;height:27px;
+}
+input#search_page_input{
+	font-size:12px;
+	font-family:Arial;
+        vertical-align:middle;
+	width:595px;height:27px;
+border:none;background:#fff;
+}
+img#search_page_action{
+        vertical-align:middle;
+        cursor:pointer;
+	padding-top:5px;
+}
+
+div.results p{font-size:14px;}
+div.results label{font-size:12px;padding:0 36px 0 12px;}
+div.search_item div.desc{font-size:11px;color:#464646;}
+div#search_results_html div.search_item img.quotebubble{width:12px;}
+div#search_results_html div.search_item span.views_count{padding:0 24px 0 0;font-weight:bold;}
+div#search_results_html div.search_item span.comment_count{padding:0 0 0 6px;}
+
+div#search_results_html img{width:85px;}
+div.search_item{padding:12px 0;}
+div#search_results_html div.chkbox{width:12px;float:left;text-align:left;}
+div#search_results_html div.logo{width:85px;float:left;text-align:left;padding:0 20px 0 0;}
+div#search_results_html div.desc{width:585px;float:left;text-align:left;line-height:20px;}
+
+div.search_results_none p{font-size:14px;padding:12px 0;}
+div.search_results_none ul{list-style-type:disc;padding:0 0 0 24px;}
+div.search_results_none ul li{margin-left:24px;font-size:14px;}
+div.search_results_none span.search_phrase_none{font-weight:bold;color:#085DAB;}
+div.search_results_none span.search_filter_none{text-transform:capitalize;}

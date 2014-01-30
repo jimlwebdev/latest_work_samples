@@ -1,0 +1,80 @@
+html{overflow-y:scroll;font:bold 10px Courier New;}
+body{text-align:center;margin:auto;font:normal 11px Arial;}
+a{text-decoration:none;cursor:pointer;}
+input, textarea{font:normal 12px "Courier New";}
+ul li{font:normal 12px Arial;}
+p strong{font-weight:bold;}
+p em{font-style:italic;}
+sup{font-size:smaller;vertical-align:baseline;position:relative;bottom:.43em}
+sub{font-size:smaller;vertical-align:baseline;position:relative;bottom:-.25em}
+
+.floatL{float:left;}
+.floatR{float:right;}
+.clearB{clear:both;background:none;height:0;display:block;visibility:hidden;}
+.clearL{clear:left;}
+.clearR{clear:right;}
+
+.italic{font-style:italic;}
+.bold{font-weight:bold;}
+.alignR{text-align:right;}
+.alignL{text-align:left;}
+.hide{display:none}
+.invisible{visibility:hidden;}
+.message{color:#005DAB;}
+.error { color: red; }
+
+.pointer *{cursor:pointer;}
+
+.uppercase{text-transform:uppercase;}
+.lowercase{text-transform:lowercase;}
+.capitalize{text-transform:capitalize;}
+.pad10{padding:10px;}
+
+div#topnav a{font-weight:bold;}
+a{/*color:#0082b5;*/font:normal 13px Arial;} 
+
+div.main{width:990px;height:auto;margin:auto;/*padding-top:10px;*/background:transparent;}
+
+div.header{margin:0 auto;}
+div.header div.toplinks{margin:15px 15px 0px 0px;}
+div.header a{cursor:pointer;}
+
+div.outer{}
+div.inner{min-height:655px;}
+div.content{padding:10px;/*position:relative;*/}
+div.container{text-align:left;}
+
+      body{background:#fff;color:#666;}
+      div{overflow:hidden;}
+      p{word-wrap:break-word;}
+      a{color:#005dab;}
+      a:hover{text-decoration:underline;}
+      .header{padding:10px 0px;}
+      .blogblue{color:#005dab;}
+      .textblack{color:#000;}
+
+      .topnav{/*padding:36px 25px 0 25px;height:34px;*/line-height:normal;padding-top:17px;margin:0;}
+      .topnav a{/*text-decoration:none;vertical-align:middle;*/margin:0 4px;}
+      .stacklinks a:hover{border-bottom:1px solid #005DAB;}
+      .topnav a:hover{border-bottom:5px solid #005DAB;text-decoration:none;}
+      .topnav a.current{color:#000;border-bottom-width:5px;border-bottom-color:#000;border-bottom-style:solid;}
+      .topnav span{font-size:24px;color:#bcccf1;}
+      .stacklinks{/*height:50px;padding-top:16px;*/margin:0;}
+      .stacklinks a{font:13px Arial;padding:0 5px;}
+      .stacklinks span{color:#bcccf1;}
+
+      div{margin:auto;text-align:center;}
+      div.main{width:960px;}
+
+      form label{padding:0 5px;}
+      form input, form select, div.memberform div.selectparent{width:300px;}
+      form input.submit{width:100px;}
+      form input.reqfield{background-color:#ff0000;}
+      form input.inputreadonly{border:none;}
+
+      form#freeform textarea{height:50px;vertical-align:top;resize:none;-webkit-appearance:textfield;}
+
+
+      .footer{font:12px Arial;color:#727272;text-align:center;padding-top:20px;border-top:1px solid #bcccf1;}
+      .footer a{font:12px Arial;color:#005dab;text-decoration:none;padding:0 10px;text-align:left;}
+      .footer-copy{padding:5px 0 10px 0;}

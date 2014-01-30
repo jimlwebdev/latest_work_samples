@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+          <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="content-language" content="en"/>
+    <meta name="language" content="en"/>
+    <link rel="icon" href="/images/site/favicon.png" type="image/png"/>
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700,300' rel='stylesheet' type='text/css'>
+    <link type="text/css" rel="stylesheet" href="http://fast.fonts.com/cssapi/bfcaebc8-e8fc-4dce-b043-1699748c392f.css"/>
+    <link rel="stylesheet" type="text/css" href="/pdonecss/oxygenfonts"/>
+    <link rel="stylesheet" type="text/css" href="/pdonecss/reset"/>
+    <link rel="stylesheet" type="text/css" href="/pdonecss/styles"/>
+    <script type="text/javascript" src="/pdonejs/jquery191"></script>
+    <script type="text/javascript" src="/pdonejs/sitewide"></script>
+    <script type="text/javascript" src="/pdonejs/handlebars"></script>
+    <script type="text/javascript" src="/pdonejs/handlebarshelpers"></script>
+<!--[if lt IE 9]><script type="text/javascript" src="/pdonejs/html5shiv"></script><![endif]-->
+<script type="text/javascript">
+$(function(){
+  pdone.site.docReady();
+  pdone.page.docReady();
+});
+</script>
+<script type="text/javascript" src="/pdonejs/jquery_validate"></script>
+<script type="text/javascript" src="/pdonejs/serializeObject"></script>
+<script type="text/javascript" src="/pdonejs/masked_input"></script>
+<!--[if lt IE 8]><script type="text/javascript" src="/pdonejs/json2"></script><![endif]-->
+<!--[if lt IE 9]><script type="text/javascript" src="/pdonejs/ie7hacks"></script><![endif]-->
+<link rel="stylesheet" type="text/css" href="/pdonecss/myaccount"/>
+   </head>
+   <body>
+      	<script>
+	pdone.namespace('pdone.storage');
+	pdone.storage.hcp_id = "521b4328e4c6acbe7c039ed4";
+	pdone.storage.name =  "jim locascio, MD";
+	pdone.storage.photo_id =  "pic_521cbadee4c6ac8415fe0a25.jpeg";
+	pdone.storage.env =  "prod-";
+	pdone.storage.hcp_specialty =  "Allergy" ;
+	pdone.storage.prog_path = "https://ajax.pdone.com/";
+	pdone.storage.data_path = "http://adde173c6df7347841bb-aea1ddd40b8cbcaa4132fefc36d1fb51.r33.cf2.rackcdn.com/";
+        pdone.storage.edetails_present = "no";
+        pdone.storage.edetails_panel_member_id = "";
+        pdone.storage.version = " - release 1.2.0 12/16/13";
+	var new_member={}
+	pdone.storage.go_home = 'no';
+    if (pdone.storage.go_home=="yes") {window.location.href="/";}
+</script>
+      <div class="outside" id="pdone_myaccount">
+         <div class="inside">
+           <main>
+		<div class="main">
+			<section class="content container_12">
+				<div id="useraccount">
+ <p id="msgtitle" class="museo722 alignL uppercase">My Account</p>
+ <p id="msgbar"><span id="preferences" class="museo714">PREFERENCES</span><span class=" middle">|</span><span id="personal_info" class="museo714">PERSONAL INFORMATION</span><span class=" middle">|</span><span id="acct_information" class="museo714">ACCOUNT INFORMATION</span><span class="middle">|</span><a href="profile" class="museo714">PROFILE</a></p>
+ <div id="myaccount"></div>
+</div>
+			</section>
+		</div>
+		<div class="clearB"></div>
+	   </main>
+         </div>
+      </div>
+   </body>
+
+<script type="text-template" id="format_specialties">
+ <option value="">Please select one</option>
+ {{#each .}}
+  <option value="{{Details.specialty}}">{{Details.specialty}}</option>
+ {{/each}}
+</script>
+
+<script type="text-template" id="format_acct_info">
+<div id="acct_information_form" class="hide alignL">
+<form id="email_form">
+<div>
+<table>
+<tr>
+<th><label><span>*</span>Old Username/Email</label></th><th></th></tr>
+<tr><td><input type="text" value="" id="oldemail" name="oldemail" class="oldemail"/></td><td></td></tr>
+<tr><th><label><span>*</span>New Username/Email</label></th><th><label><span>*</span>Re-type New Username/Email</label></th></tr>
+<tr><td><input type="text" value="" id="newemail1" name="newemail1" class="newemail1"/></td><td><input type="text" value="" id="newemail2" name="newemail2" class="newemail2"/></td></tr>
+</table>
+<table class="buttons"><tr><td><input type="button" class="museo712" id="EM_save_chgs" value="Save Changes"/></td><td><input type="button" class="museo712" id="EM_cancel" value="Cancel"/></td><td><label><span>*</span> required field</label></td></tr></table>
+</div>
+</form>
+<div class="myacct_divider"><span>I want to update my Password</span></div>
+<form id="password_form" class="hide">
+<div>
+<table>
+<tr><th><label><span>*</span>Old Password</label></th><th></th></tr>
+<tr><td><input type="password" value="" id="oldpassword" name="oldpassword" class="oldpassword"/></td><td></td></tr>
+<tr><th><label><span>*</span>New Password</label></th><th><label><span>*</span>Re-type New Password</label></th></tr>
+<tr><td><input type="password" value="" id="newpassword1" name="newpassword1" class="newpassword1"/></td><td><input type="password" value="" id="newpassword2" name="newpassword2" class="newpassword2"/></td></tr>
+<tr><td colspan="2" class="pwdmsg">Passwords must be at least 8 characters and may use both upper- and lower-case letters, one or more numerical digits,<br/>and the following special characters: #@_!$,.</td></tr>
+</table>
+</div>
+<table class="buttons"><tr><td><input type="button" class="museo712" id="PW_save_chgs" value="Save Changes"/></td><td><input type="button" class="museo712" id="PW_cancel" value="Cancel"/></td><td><label><span>*</span> required fields</label></td></tr></table>
+</form>
+</div>
+
+<div id="personal_info_form" class="hide alignL">
+<form id="personal_information">
+<div>
+<table>
+<tr><th><label><span>*</span>First Name</label></th><th><label>Middle</label></th></tr>
+<tr><td><input type="text" id="first" name="first" class="first" value="{{first}}"/></td><td><input type="text" id="middle" name="middle" class="middle" value="{{middle}}" class="middle"/></td></tr>
+</table>
+<table>
+<tr><th><label><span>*</span>Last Name</label></th><th><label>Suffix</label></th><th><label><span>*</span>Credential</label></th></tr>
+<tr>
+<td><input type="text" id="last" name="last" class="last" value="{{last}}"/></td>
+<td><select id="suffix" name="suffix" class="suffix" value="{{suffix}}"><option value=""></option><option value="I">I</option><option value="II">II</option><option value="III">III</option><option value="Jr">Jr</option><option value="Sr">Sr</option></select></td>
+<td><select id="credential" name="credential" class="credential" value="{{credential}}"><option value=""></option><option value="MD">MD</option><option value="DO">DO</option><option value="PA">PA</option><option value="RN">RN</option></select></td>
+</tr>
+</table>
+<table>
+<tr><th><label>Gender</label></th><th><label>Birth Year</label></th><th><label>Med School Graduation Year</label></th></tr>
+<tr>
+<td><select id="gender" name="gender" class="gender" value="{{gender}}"><option value=""></option><option value="female">Female</option><option value="male">Male</option></select></td>
+<td><input type="text" id="yob" name="yob" class="yob" value="{{yob}}" placeholder="yyyy"/></td>
+<td><input type="text" id="grad_year" name="grad_year" class="grad_year" value="{{grad_year}}" placeholder="yyyy"/></td>
+</tr>
+</table>
+<table>
+<tr><th><label><span>*</span>Medical Specialty</label></th></tr>
+<tr><td><select id="specialty" name="specialty" class="specialty" value="{{specialty}}"></select></td></tr>
+</table>
+<table>
+<tr><th><label><span>*</span>Address 1</label></th><th><label>Apt/Suite #</label></th></tr>
+<tr><td><input type="text" id="address1" name="address1" class="address1" value="{{address.line1}}"/></td><td><input type="text" id="suite" name="suite" class="suite" value="{{address.suite}}"/></td></tr>
+</table>
+<table>
+<tr><th><label>Address 2</label></th></tr>
+<tr><td><input type="text" id="address2" name="address2" class="address2" value="{{address.line2}}"/></td></tr>
+</table>
+<table>
+<tr><th><label><span>*</span>City</label></th><th><label><span>*</span>State</label></th><th><label><span>*</span>Zip</label></th></tr>
+<tr>
+<td><input type="text" id="city" name="city" class="city" value="{{address.city}}"/></td>
+<td><select id="state" name="state" class="state" value="{{address.state}}">
+<option value=""></option>
+<option value="AL">AL</option><option value="AK">AK</option><option value="AR">AR</option><option value="AS">AS</option><option value="AZ">AZ</option>
+<option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DC">DC</option><option value="DE">DE</option>
+<option value="FL">FL</option><option value="FM">FM</option><option value="GA">GA</option><option value="GU">GU</option><option value="HI">HI</option>
+<option value="IA">IA</option><option value="ID">ID</option><option value="IL">IL</option><option value="IN">IN</option><option value="KS">KS</option>
+<option value="KY">KY</option><option value="LA">LA</option><option value="MA">MA</option><option value="MD">MD</option><option value="ME">ME</option>
+<option value="MH">MH</option><option value="MI">MI</option><option value="MN">MN</option><option value="MO">MO</option><option value="MP">MP</option>
+<option value="MS">MS</option><option value="MT">MT</option><option value="NC">NC</option><option value="ND">ND</option><option value="NE">NE</option>
+<option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NV">NV</option><option value="NY">NY</option>
+<option value="OH">OH</option><option value="OK">OK</option><option value="OR">OR</option><option value="PA">PA</option><option value="PR">PR</option>
+<option value="PW">PW</option><option value="RI">RI</option><option value="SC">SC</option><option value="SD">SD</option><option value="TN">TN</option>
+<option value="TX">TX</option><option value="UT">UT</option><option value="VA">VA</option><option value="VI">VI</option><option value="VT">VT</option>
+<option value="WA">WA</option><option value="WI">WI</option><option value="WV">WV</option><option value="WY">WY</option>
+</select></td>
+<td><input type="text" id="zip" name="zip" value="{{address.zip}}" class="zipcode"/></td>
+</tr>
+</table>
+<table>
+<tr><th><label><span>*</span>Phone</label></th><th><label>Fax</label></th></tr>
+<tr><td><input type="text" id="phone" name="phone" value="{{phone}}" class="phone" placeholder="(xxx) xxx-xxxx"/></td><td><input type="text" id="fax" name="fax" value="{{fax}}" class="fax" placeholder="(xxx) xxx-xxxx"/></td></tr>
+</table>
+<table>
+<tr><th><label>State License #</label></th><th><label>Licensing State</label></th></tr>
+<tr>
+<td><input type="text" id="license" name="license" class="license" value="{{license}}"/></td>
+<td><select id="license_state" name="license_state" class="license_state" value="{{license_state}}">
+<option value=""></option>
+<option value="AL">AL</option><option value="AK">AK</option><option value="AR">AR</option><option value="AS">AS</option><option value="AZ">AZ</option>
+<option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DC">DC</option><option value="DE">DE</option>
+<option value="FL">FL</option><option value="FM">FM</option><option value="GA">GA</option><option value="GU">GU</option><option value="HI">HI</option>
+<option value="IA">IA</option><option value="ID">ID</option><option value="IL">IL</option><option value="IN">IN</option><option value="KS">KS</option>
+<option value="KY">KY</option><option value="LA">LA</option><option value="MA">MA</option><option value="MD">MD</option><option value="ME">ME</option>
+<option value="MH">MH</option><option value="MI">MI</option><option value="MN">MN</option><option value="MO">MO</option><option value="MP">MP</option>
+<option value="MS">MS</option><option value="MT">MT</option><option value="NC">NC</option><option value="ND">ND</option><option value="NE">NE</option>
+<option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NV">NV</option><option value="NY">NY</option>
+<option value="OH">OH</option><option value="OK">OK</option><option value="OR">OR</option><option value="PA">PA</option><option value="PR">PR</option>
+<option value="PW">PW</option><option value="RI">RI</option><option value="SC">SC</option><option value="SD">SD</option><option value="TN">TN</option>
+<option value="TX">TX</option><option value="UT">UT</option><option value="VA">VA</option><option value="VI">VI</option><option value="VT">VT</option>
+<option value="WA">WA</option><option value="WI">WI</option><option value="WV">WV</option><option value="WY">WY</option>
+</select></td>
+</tr>
+</table>
+<table>
+<tr><th><label class="caps">NPI #</label></th><th><label class="caps">DEA #</label></th></tr>
+<tr><td><input type="text" id="npi" name="npi" class="npi" value="{{npi}}"/></td><td><input type="text" id="dea" name="dea" class="dea" value="{{dea}}"/></td></tr>
+</table>
+</div>
+<table class="buttons"><tr><td><input type="button" class="museo712" id="PI_save_chgs" value="Save Changes"/></td><td><input type="button" class="museo712" id="PI_cancel" value="Cancel"/></td><td><label><span>*</span> required fields</label></td></tr></table>
+</form>
+</div>
+
+<div id="preferences_form" class="alignL">
+<form id="preference_fields">
+<div>
+<p class="larger">I want to be notified when a colleague in my network does the following:</p>
+<table>
+<tr>
+<td><input type="checkbox" id="viewArticle" name="viewArticle" value="{{preferences.network_activity.viewArticle}}"/><label>Views an article</label></td>
+<td><input type="checkbox" id="groupCreate" name="groupCreate" value="{{preferences.network_activity.groupCreate}}"/><label>Creates a forum</label></td>
+</tr>
+<tr>
+<td><input type="checkbox" id="commentArticle" name="commentArticle" value="{{preferences.network_activity.commentArticle}}"/><label>Comments on an article</label></td>
+<td><input type="checkbox" id="topicCreate" name="topicCreate" value="{{preferences.network_activity.topicCreate}}"/><label>Creates a forum topic</label></td>
+</tr>
+<tr>
+<td><input type="checkbox" id="rateArticle" name="rateArticle" value="{{preferences.network_activity.rateArticle}}"/><label>Likes/dislikes an article</label></td>
+<td><input type="checkbox" id="commentCreate" name="commentCreate" value="{{preferences.network_activity.commentCreate}}"/><label>Comments in a discussion</label></td>
+</tr>
+</table>
+</div>
+<table class="buttons"><tr><td><input type="button" class="museo712" id="NA_save_chgs" value="Save Changes"/></td><td><input type="button" class="museo712" id="NA_cancel" value="Cancel"/></td></tr></table>
+</form>
+</div>
+</script>
+
+<script type="text/javascript" src="/pdonescript/myaccount"></script>
+</html>

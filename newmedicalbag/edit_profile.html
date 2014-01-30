@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="content-language" content="en"/>
+    <meta name="language" content="en"/>
+    <link rel="icon" href="/images/site/favicon.png" type="image/png"/>
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700,300' rel='stylesheet' type='text/css'>
+    <link type="text/css" rel="stylesheet" href="http://fast.fonts.com/cssapi/bfcaebc8-e8fc-4dce-b043-1699748c392f.css"/>
+    <link rel="stylesheet" type="text/css" href="/pdonecss/oxygenfonts"/>
+    <link rel="stylesheet" type="text/css" href="/pdonecss/reset"/>
+    <link rel="stylesheet" type="text/css" href="/pdonecss/styles"/>
+    <script type="text/javascript" src="/pdonejs/jquery191"></script>
+    <script type="text/javascript" src="/pdonejs/sitewide"></script>
+    <script type="text/javascript" src="/pdonejs/handlebars"></script>
+    <script type="text/javascript" src="/pdonejs/handlebarshelpers"></script>
+<!--[if lt IE 9]><script type="text/javascript" src="/pdonejs/html5shiv"></script><![endif]-->
+<script type="text/javascript">
+$(function(){
+  pdone.site.docReady();
+  pdone.page.docReady();
+});
+</script>
+<!--[if lt IE 8]><script type="text/javascript" src="/pdonejs/json2"></script><![endif]-->
+<!--[if lt IE 9]><script type="text/javascript" src="/pdonejs/ie7hacks"></script><![endif]-->
+<link rel="stylesheet" type="text/css" href="/pdonecss/edit_profile"/>
+</head>
+   <body>
+      <script>
+	pdone.namespace('pdone.storage');
+	pdone.storage.hcp_id = "521b4328e4c6acbe7c039ed4";
+	pdone.storage.name =  "jim locascio, MD";
+	pdone.storage.photo_id =  "pic_521cbadee4c6ac8415fe0a25.jpeg";
+	pdone.storage.env =  "prod-";
+	pdone.storage.hcp_specialty =  "Allergy" ;
+	pdone.storage.prog_path = "https://ajax.pdone.com/";
+	pdone.storage.data_path = "http://adde173c6df7347841bb-aea1ddd40b8cbcaa4132fefc36d1fb51.r33.cf2.rackcdn.com/";
+        pdone.storage.edetails_present = "no";
+        pdone.storage.edetails_panel_member_id = "";
+        pdone.storage.version = " - release 1.2.0 12/16/13";
+	var new_member={};
+	pdone.storage.go_home = 'no';
+
+    if (pdone.storage.go_home=="yes") {window.location.href="/";}
+	</script>
+
+      <div class="outside" id="pdone_edit_profile">
+         <div class="inside">
+           <main>
+		    <div class="main">			  
+			   <section class="content">
+				<div id="profile_content">
+ <p id="msgtitle" class="museo722 uppercase">My Network <img src="/images/site/right_pt_arrows.png"/> My Profile</p>
+ <div id="profile_header"></div>
+ <div id="edit_profile_content">
+			<div id="experiences">
+				<p class="headline">Experience</p><form class="edit"></form><p><img class="addme" src="/images/site/edit-profile-add-btn.png" alt="experiences"/><span class="addspace">Add experience (maximum of 5 experiences)</span></p>
+			</div>
+			<div id="residencies">
+				<p class="headline">Residency</p><form class="edit"></form><p><img class="addme" src="/images/site/edit-profile-add-btn.png" alt="residencies"/><span class="addspace">Add residency (maximum of 5 residencies)</span></p>
+			</div>
+			<div id="medschools">
+				<p class="headline">Medical School</p><form class="edit"></form><p><img class="addme" src="/images/site/edit-profile-add-btn.png" alt="medschools"/><span class="addspace">Add medical school (maximum of 5 medical school)</span></p>
+			</div>
+			<div id="undergrads">
+				<p class="headline">Undergrad Studies</p><form class="edit"></form><p><img class="addme" src="/images/site/edit-profile-add-btn.png" alt="undergrads"/><span class="addspace">Add undergraduate school (maximum of 5 undergraduate school)</span></p>
+			</div>
+			<div id="specialties">
+				<p class="headline">Specialties</p><form class="edit"></form><p><img class="addSpc" src="/images/site/edit-profile-add-btn.png" alt="specialties"/><span class="addspace">Add specialty (maximum of 5 specialties)</span></p>
+			</div>
+<div class="alignR">
+	 <input type="button" class="museo712" id="saveprofilechgs" value="Save"/>
+	 <input type="button" class="museo712" id="cancelprofilechgs" value="Cancel"/>
+</div>
+ </div>
+</div>
+			   </section>
+		    </div>
+		<div class="clearB"></div>
+	   </main>
+         </div>
+      </div>
+
+<script type="text-template" id="format_specialties">
+ <option value="">Please select one</option>
+ {{#each .}}
+  <option value="{{Details.specialty}}">{{Details.specialty}}</option>
+ {{/each}}
+</script>
+
+<script type="text-template" id="listofstates">
+<option value=""></option>
+<option value="AL">AL</option><option value="AK">AK</option><option value="AR">AR</option><option value="AS">AS</option><option value="AZ">AZ</option>
+<option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DC">DC</option><option value="DE">DE</option>
+<option value="FL">FL</option><option value="FM">FM</option><option value="GA">GA</option><option value="GU">GU</option><option value="HI">HI</option>
+<option value="IA">IA</option><option value="ID">ID</option><option value="IL">IL</option><option value="IN">IN</option><option value="KS">KS</option>
+<option value="KY">KY</option><option value="LA">LA</option><option value="MA">MA</option><option value="MD">MD</option><option value="ME">ME</option>
+<option value="MH">MH</option><option value="MI">MI</option><option value="MN">MN</option><option value="MO">MO</option><option value="MP">MP</option>
+<option value="MS">MS</option><option value="MT">MT</option><option value="NC">NC</option><option value="ND">ND</option><option value="NE">NE</option>
+<option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NV">NV</option><option value="NY">NY</option>
+<option value="OH">OH</option><option value="OK">OK</option><option value="OR">OR</option><option value="PA">PA</option><option value="PR">PR</option>
+<option value="PW">PW</option><option value="RI">RI</option><option value="SC">SC</option><option value="SD">SD</option><option value="TN">TN</option>
+<option value="TX">TX</option><option value="UT">UT</option><option value="VA">VA</option><option value="VI">VI</option><option value="VT">VT</option>
+<option value="WA">WA</option><option value="WI">WI</option><option value="WV">WV</option><option value="WY">WY</option>
+</script>
+
+<script type="text-template" id="profile_header_template">
+ <div class="profile_header">
+  <img src="pdone.storage.data_path{{photo_id}}" class="floatL"/>
+  <div class="desc">
+  <span class="drname">{{name}}</span><br/>
+  <span class="position">{{specialty}}</span><br/>
+  <span class="position">{{position}}</span><br/>
+  <span>{{hospital}}</span><br/>
+  <span>{{#citystate city state}}{{/citystate}}</span><br/>
+  </div>
+  <div class="clearB"></div>
+ </div>
+</script>
+
+<script type="text-template" id="TpositionT">
+	{{#position}}<p><input type='text' name='exp_title' value="{{title}}" placeholder='Position' class="medium"/>{{#dates}} <input type='text' name='exp_dt_start' value="{{dt_start}}" class="date" placeholder='YYYY'/> <input type='text' name='exp_dt_end' value="{{dt_end}}" class="date" placeholder='YYYY'/>{{/dates}}<img class="rmvpos" src="/images/site/edit-profile-remove-btn.png"/><span class="addspace">Remove position</span></p>{{/position}}
+</script>
+
+<script type="text-template" id="TexperienceT">{{#experiences}}<div class="outer">
+<p><input type='text' name='exp_hospital' value='{{hospital}}' placeholder='Name of Employer' class="large"/><img class="remove" src="/images/site/edit-profile-remove-btn.png"/><span class="addspace">Remove experience</span></p>
+<p><input type='text' name='exp_city' value="{{city}}" placeholder="City" class="medium"/><input type='hidden' name='exp_hide_state' value="{{state}}"/><select name='exp_state' class="state">{{>listofstates}}</select></p>
+{{#position}}<p><input type='text' name='exp_title' value="{{title}}" placeholder='Position' class="medium"/>{{#dates}} <input type='text' name='exp_dt_start' value="{{dt_start}}" class="date" placeholder='YYYY'/> <input type='text' name='exp_dt_end' value="{{dt_end}}" class="date" placeholder='YYYY'/>{{/dates}}<img class="rmvpos" src="/images/site/edit-profile-remove-btn.png"/><span class="addspace">Remove position</span></p>{{/position}}
+<p><img class="addpos" src="/images/site/edit-profile-add-btn.png" alt="position"/><span class="addspace">Add position (maximum of 5 positions)</span></p></div>{{/experiences}}
+</script>
+
+<script type="text-template" id="TresidencyT">{{#residencies}}<div class="outer"><p>
+<input type='text' name='res_hospital' value='{{hospital}}' placeholder='Name of Hospital' class="large"/><img class="remove" src="/images/site/edit-profile-remove-btn.png"/><span class="addspace">Remove residency</span></p>
+<p><input type='text' name='res_city' value="{{city}}" placeholder="City" class="medium"/>
+<input type='hidden' name='res_hide_state' value="{{state}}"/>
+<select name='res_state' value="{{state}}" class="state">{{>listofstates}}</select></p>
+<p>{{#dates}} <input type='text' name='res_dt_start' value="{{dt_start}}" class="date" placeholder='YYYY'/> <input type='text' name='res_dt_end' value="{{dt_end}}" class="date" placeholder='YYYY'/> {{/dates}}</p></div>{{/residencies}}
+</script>
+
+<script type="text-template" id="TmedschoolT">{{#medschools}}<div class="outer"><p>
+<input type='text' name='med_school' value='{{school}}' placeholder='Name of Medical School' class="large"/><img class="remove" src="/images/site/edit-profile-remove-btn.png"/><span class="addspace">Remove medical school</span></p>
+<p><input type='text' name='med_city' value="{{city}}" placeholder="City" class="medium"/>
+<input type='hidden' name='med_hide_state' value="{{state}}"/>
+<select name='med_state' value="{{state}}" class="state">{{>listofstates}}</select></p>
+<p><input type="text" name="med_degree" value="{{degree}}" class="medium" placeholder="Degree"/>
+{{#dates}} <input type='text' name='med_dt_start' value="{{dt_start}}" class="date" placeholder='YYYY'/> <input type='text' name='med_dt_end' value="{{dt_end}}" class="date" placeholder='YYYY'/> {{/dates}}</p></div>{{/medschools}}
+</script>
+
+<script type="text-template" id="TundergradT">{{#undergrads}}<div class="outer"><p>
+<input type='text' name='ugd_school' value='{{school}}' placeholder='Name of College' class="large"/><img class="remove" src="/images/site/edit-profile-remove-btn.png"/><span class="addspace">Remove undergrad</span></p>
+<p><input type='text' name='ugd_city' value="{{city}}" placeholder="City" class="medium"/>
+<input type='hidden' name='ugd_hide_state' value="{{state}}"/>
+<select name='ugd_state' value="{{state}}" class="state">{{>listofstates}}</select></p>
+<p><input type="text" name="ugd_degree" value="{{degree}}" class="medium" placeholder="Degree"/>
+{{#dates}}<input type='text' name='ugd_dt_start' value="{{dt_start}}" class="date" placeholder='YYYY'/> <input type='text' name='ugd_dt_end' value="{{dt_end}}" class="date" placeholder='YYYY'/> {{/dates}}</p></div>{{/undergrads}}
+</script>
+
+<script type="text-template" id="TspecialtyT">{{#specialties}}<div class="outer">
+<p><input type="hidden" name="hide_specialty" value="{{.}}"/>
+<select name='specialty' class='specialty'>{{>specialtyopts}}</select>
+<img class="remove" src="/images/site/edit-profile-remove-btn.png"/><span class="addspace">Remove specialty</span></p></div>{{/specialties}}
+</script>
+
+   </body>
+<script type="text/javascript" src="/pdonescript/edit_profile"></script>
+</html>
