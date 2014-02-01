@@ -1,5 +1,3 @@
-//	pdone.storage.prog_path = "http://tmb_rpc.qa.stg1.pdone.com/";
-
     pdone.namespace("pdone.repconnect");
 	pdone.repconnect.brandshares = null;
 	pdone.repconnect.presentations = null;
@@ -15,10 +13,6 @@
 	pdone.handlebars.maincompanylogos = null;
 	pdone.handlebars.footer = null;
 
-
-/*
- compile handlebars for later use
-*/
 	pdone.handlebars.compiler = function(){
 		var hellodr = $('#tmplt_hellodr').html();
 		pdone.handlebars.hellodr = Handlebars.compile(hellodr);
@@ -53,12 +47,13 @@
 		return null;
 	}
 
-
-/*
-
-*/
 	pdone.namespace("pdone.page");
 	pdone.page.docReady = function(){
+
+		$('#main_hcp_name img').on('click',function(){
+		  $('.tempDD').show();
+		  $('.tempDD').on('mouseleave',function(){$('.tempDD').hide();})
+		})
 		 $('#main_hcp_name span').html(pdone.storage.name);
 
 		 $('main div#rightside').on('click','#contactrep',function(){
@@ -82,16 +77,10 @@
 
 	}
 
-/*
- add window scroll to control ISI
-*/
 	pdone.page.isiReady = function(){
+
 	 $(window).on('scroll',function() {
-	  if($('.hidecoverisi').is(":within-viewport")) {
-	  	$('div#coverISI').hide();
-	  } else {
-	  	$('div#coverISI').show();
-	  }
+	  if($('.hidecoverisi').is(":within-viewport")) {$('div#coverISI').hide();} else {$('div#coverISI').show();}
 	 });
 	}
 
@@ -112,9 +101,6 @@
 	    }, time);
 	}
 
-/*
- standard ajax call used with $.when
-*/
 	pdone.namespace("pdone.ajax");
 	pdone.ajax.getjson = function(phprocess,datatosend){
 	        return $.ajax({
@@ -127,16 +113,10 @@
 	         error:function(request,error){}});
     	}
 
-/*
- initalize processors
-*/
+	
     pdone.namespace("pdone.processor");
     pdone.processor.ajaxurl = "company_brand_processor.php";
     pdone.processor.mailurl = "mail_processor.php";
-
-/*
- set up $.when for single & multiple calls
-*/
 
     pdone.namespace("pdone.jqwhen");
     pdone.jqwhen.single = function(what){
@@ -160,11 +140,17 @@
 	);
     }
         
-/*
- set up specific when
-*/
 	pdone.jqwhen.reprequest = function(){
 		var reprequest = $('form#form_reprequest').serialize();
+/*
+		var params = "mode=contact_rep&hcp_id="+pdone.storage.hcp_id+"&rep_id="++"&msg_id="++"&msg_text=";
+		return pdone.ajax.jsonp(pdone.processor.ajaxurl,params);
+
+brand_id=
+rep_id=
+msg_id=
+msg_text=
+*/
 		alert(reprequest);
    	 }
         
@@ -185,14 +171,9 @@
 		return pdone.ajax.jsonp(pdone.processor.ajaxurl,params);
 	}
 
-
-/*
- set up done 
-*/
 	pdone.namespace("pdone.jqdone");
 	pdone.jqdone.compile = function(what){
 	}
-	
 	pdone.jqdone.brandshares = function(results){
 		pdone.repconnect.brandshares = results[0];
 		var lastrep = pdone.repconnect.brandshares.reps.length - 1;
@@ -231,14 +212,17 @@
 	}
 
 	pdone.jqdone.mailprocess = function(results){
+//
 		if (results.inbox_stats !=""){
 			var rep_unread = results.inbox_stats.rep_unread
 			if(rep_unread > 0){$('#main_rep_msg_ctr').show();} else {$('#main_rep_msg_ctr').hide();}
 			$('#main_rep_msg_ctr').html(rep_unread);
 		}
+//
 	}
 
 	pdone.jqdone.presentations = function(){
+
 		pdone.jqwhen.single('mailprocess');
 
 		$('body#rep_connect main div.new_to_tmb_yes').animate({backgroundColor:'transparent'},1000,function(){});
@@ -253,10 +237,5 @@
 		$('.popup_overlay').hide();
 		$('#email_overlay').hide();
    	 }
-
-/*
- set up fail
-*/
-
 	pdone.namespace("pdone.jqfail");
 	pdone.jqfail.common = function(request,error){alert(error);}

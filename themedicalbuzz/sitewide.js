@@ -13,8 +13,8 @@
           }
          });
          blog.namespace("blog.animated");
-  	 blog.topnav.long = {'src':"/images/site/240x400.swf",'width':'240px','height':'400px'};
-  	 blog.topnav.short = {'src':"/images/site/180x150.swf",'width':'180px','height':'150px'};
+  	 blog.topnav.long = {'src':"http://www.themedicalbuzz.com/images/site/240x400.swf",'width':'240px','height':'400px'};
+  	 blog.topnav.short = {'src':"http://www.themedicalbuzz.com/images/site/180x150.swf",'width':'180px','height':'150px'};
 	}
 
 	blog.namespace("blog.page");
